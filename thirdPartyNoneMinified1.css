@@ -13005,7 +13005,7 @@ to {
     min-width: 20px;
 }
 .resume-layout-newcondensed.resume-layout-small .activity-item .item-degree, .resume-layout-newcondensed.resume-layout-small .activity-item .item-position, .resume-layout-newcondensed.resume-layout-small .activity-item .item-role, .resume-layout-newcondensed.resume-layout-small .activity-item .item-title, .resume-layout-newcondensed.resume-layout-small .education-item .item-degree, .resume-layout-newcondensed.resume-layout-small .education-item .item-position, .resume-layout-newcondensed.resume-layout-small .education-item .item-role, .resume-layout-newcondensed.resume-layout-small .education-item .item-title, .resume-layout-newcondensed.resume-layout-small .experience-item .item-degree, .resume-layout-newcondensed.resume-layout-small .experience-item .item-position, .resume-layout-newcondensed.resume-layout-small .experience-item .item-role, .resume-layout-newcondensed.resume-layout-small .experience-item .item-title, .resume-layout-newcondensed.resume-layout-small .publication-item .item-degree, .resume-layout-newcondensed.resume-layout-small .publication-item .item-position, .resume-layout-newcondensed.resume-layout-small .publication-item .item-role, .resume-layout-newcondensed.resume-layout-small .publication-item .item-title, .resume-layout-newcondensed.resume-layout-small .technologies-item .item-degree, .resume-layout-newcondensed.resume-layout-small .technologies-item .item-position, .resume-layout-newcondensed.resume-layout-small .technologies-item .item-role, .resume-layout-newcondensed.resume-layout-small .technologies-item .item-title, .resume-layout-newcondensed.resume-layout-small .volunteer-item .item-degree, .resume-layout-newcondensed.resume-layout-small .volunteer-item .item-position, .resume-layout-newcondensed.resume-layout-small .volunteer-item .item-role, .resume-layout-newcondensed.resume-layout-small .volunteer-item .item-title {
-    font-size: 16px!important;
+    font-size: 15px!important;
     line-height: 20px!important;
 }
 .resume-layout-newcondensed.resume-layout-small .activity-item .item-edition, .resume-layout-newcondensed.resume-layout-small .activity-item .item-institution, .resume-layout-newcondensed.resume-layout-small .activity-item .item-workplace, .resume-layout-newcondensed.resume-layout-small .education-item .item-edition, .resume-layout-newcondensed.resume-layout-small .education-item .item-institution, .resume-layout-newcondensed.resume-layout-small .education-item .item-workplace, .resume-layout-newcondensed.resume-layout-small .experience-item .item-edition, .resume-layout-newcondensed.resume-layout-small .experience-item .item-institution, .resume-layout-newcondensed.resume-layout-small .experience-item .item-workplace, .resume-layout-newcondensed.resume-layout-small .publication-item .item-edition, .resume-layout-newcondensed.resume-layout-small .publication-item .item-institution, .resume-layout-newcondensed.resume-layout-small .publication-item .item-workplace, .resume-layout-newcondensed.resume-layout-small .technologies-item .item-edition, .resume-layout-newcondensed.resume-layout-small .technologies-item .item-institution, .resume-layout-newcondensed.resume-layout-small .technologies-item .item-workplace, .resume-layout-newcondensed.resume-layout-small .volunteer-item .item-edition, .resume-layout-newcondensed.resume-layout-small .volunteer-item .item-institution, .resume-layout-newcondensed.resume-layout-small .volunteer-item .item-workplace {
@@ -13029,7 +13029,7 @@ to {
     padding-bottom: 0!important;
 }
 .resume-layout-newcondensed.resume-layout-small .achievement-item .achievement-item-description, .resume-layout-newcondensed.resume-layout-small .day-of-my-life-item .day-of-my-life-labels .day-of-my-life-title, .resume-layout-newcondensed.resume-layout-small .editable-field-sm, .resume-layout-newcondensed.resume-layout-small .summary-item .editable-field {
-    font-size: 12px;
+    font-size: 12px!important;
 }
 .resume-layout-newcondensed.resume-layout-small .quote-item-quote {
     font-size: 14px!important;
@@ -13440,7 +13440,7 @@ to {
 .resume-layout-newcondensed .resume-section .resume-section-text {
     color: black;
     font-size: 15px;
-    font-weight: 580;
+    font-weight: 550;
     line-height: 22px;
     border-bottom: 2px solid black;
 }
@@ -15403,7 +15403,7 @@ a .item-object.social-item {
 }
 .summary-item .editable-field {
     color: #384347;
-    font-size: 14px !important;
+    font-size: 15px;
 }
 .resume-layout-condensed .summary-item .editable-field {
     font-size: 13px;
