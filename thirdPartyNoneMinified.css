@@ -13309,7 +13309,7 @@ to {
 }
 .resume-renderer-page {
     height: 1329px;
-    padding: 60px;
+    padding: 27px;
     page-break-after: always;
     position: relative;
     background-color: #fff;
@@ -21589,7 +21589,7 @@ to {
 }
 .browser-resume-page {
     position: relative;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     -webkit-box-shadow: 0 0 2px 0 rgba(83, 83, 83, .5);
     box-shadow: 0 0 2px 0 rgba(83, 83, 83, .5);
 }
