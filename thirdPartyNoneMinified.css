@@ -21589,7 +21589,6 @@ to {
 }
 .browser-resume-page {
     position: relative;
-    /* margin-bottom: 40px; */
     -webkit-box-shadow: 0 0 2px 0 rgba(83, 83, 83, .5);
     box-shadow: 0 0 2px 0 rgba(83, 83, 83, .5);
 }
