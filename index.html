@@ -1,62 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- 	<meta id="viewportMeta" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> -->
 	<meta id="viewportMeta" name="viewport" content="width=device-width,initial-scale=1, user-scalable=yes">
-	
-	<style>.browsehappy{text-align:center;color:#333;position:fixed;top:0;bottom:0;margin:auto;width:100%;height:20px;font-size:20px}.browsehappy a{color:#333!important;font-weight:700;text-decoration:underline}.browsehappy a:focus,.browsehappy a:hover{text-decoration:underline}#app,#content,body,html{width:100%;height:100%}.initial-loading{display:flex;align-items:center;justify-content:center;position:absolute;top:0;flex-direction:column;bottom:0;left:0;right:0}.initial-loading svg{width:90px;height:44px}.initial-loading svg:last-child{z-index:2!important}.initial-loading svg .st0{fill:none;stroke-width:1.9;stroke-miterlimit:10}.initial-loading-container{top:0;bottom:0;left:0;right:0;position:absolute;z-index:1200;background:#f3f3f3}.tip-box{font-size:22px;width:50%;font-weight:700;font-style:italic;text-align:center;font-family:Arial,serif}
+
+	<style>
+		.browsehappy {
+			text-align: center;
+			color: #333;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			width: 100%;
+			height: 20px;
+			font-size: 20px
+		}
+
+		.browsehappy a {
+			color: #333 !important;
+			font-weight: 700;
+			text-decoration: underline
+		}
+
+		.browsehappy a:focus,
+		.browsehappy a:hover {
+			text-decoration: underline
+		}
+
+		#app,
+		#content,
+		body,
+		html {
+			width: 100%;
+			height: 100%
+		}
+
+		.initial-loading {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 0;
+			flex-direction: column;
+			bottom: 0;
+			left: 0;
+			right: 0
+		}
+
+		.initial-loading svg {
+			width: 90px;
+			height: 44px
+		}
+
+		.initial-loading svg:last-child {
+			z-index: 2 !important
+		}
+
+		.initial-loading svg .st0 {
+			fill: none;
+			stroke-width: 1.9;
+			stroke-miterlimit: 10
+		}
+
+		.initial-loading-container {
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: absolute;
+			z-index: 1200;
+			background: #f3f3f3
+		}
+
+		.tip-box {
+			font-size: 22px;
+			width: 50%;
+			font-weight: 700;
+			font-style: italic;
+			text-align: center;
+			font-family: Arial, serif
+		}
 	</style>
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href="fontNIcon.css" rel="stylesheet">
 	<!-- <link href="thirdParty.css" rel="stylesheet"> -->
 	<link href="thirdPartyNoneMinified.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CRoboto:300,400,600,700%7CPT+Sans:300,400,700%7CLato:400,700,800%7CRubik:400,500%7CAbril+Fatface%7CRaleway:300,400,600,700%7CMontserrat:300,400,700%7CExo+2:400,600%7COswald:300,400,700%7CChivo%7CRoboto+Slab:400,700%7CBitter:400,700%7CVolkhov:400,700&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic,latin,cyrillic-ext,latin-ext,cyrillic,latin,cyrillic-ext,latin-ext,cyrillic,latin,cyrillic-ext,latin-ext,cyrillic,latin,latin-ext,cyrillic,latin,latin-ext,latin,latin-ext,latin,latin,latin-ext,cyrillic,latin,latin-ext,latin,latin,cyrillic-ext,latin-ext,cyrillic,latin,latin-ext,latin,latin-ext" media="all">
-	<style type="text/css">.smooth-dnd-container{position:relative;}.smooth-dnd-container *{box-sizing:border-box;}.smooth-dnd-container.horizontal{white-space:nowrap;}.smooth-dnd-container.horizontal > .smooth-dnd-stretcher-element{display:inline-block;}.smooth-dnd-container.horizontal > .smooth-dnd-draggable-wrapper{height:100%;display:inline-block;vertical-align:top;white-space:normal;}.smooth-dnd-container.vertical > .smooth-dnd-draggable-wrapper{overflow:hidden;display:block;}.smooth-dnd-draggable-wrapper{}.smooth-dnd-draggable-wrapper.horizontal{height:100%;display:inline-block;vertical-align:top;white-space:normal;}.smooth-dnd-draggable-wrapper.vertical{overflow:hidden;display:block;}.smooth-dnd-draggable-wrapper.animated{transition:transform ease;}.smooth-dnd-ghost *{box-sizing:border-box;}.smooth-dnd-ghost.animated{transition:all ease-in-out;}.smooth-dnd-disable-touch-action *{touch-actions:none;-ms-touch-actions:none;}.smooth-dnd-no-user-select *{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+	<style type="text/css">
+		.smooth-dnd-container {
+			position: relative;
+		}
+
+		.smooth-dnd-container * {
+			box-sizing: border-box;
+		}
+
+		.smooth-dnd-container.horizontal>.smooth-dnd-stretcher-element {
+			display: inline-block;
+		}
+
+		.smooth-dnd-container.horizontal>.smooth-dnd-draggable-wrapper {
+			height: 100%;
+			display: inline-block;
+			vertical-align: top;
+			/* white-space: normal; */
+		}
+
+		.smooth-dnd-container.vertical>.smooth-dnd-draggable-wrapper {
+			overflow: hidden;
+			display: block;
+		}
+
+		.smooth-dnd-draggable-wrapper {}
+
+		.smooth-dnd-draggable-wrapper.horizontal {
+			height: 100%;
+			display: inline-block;
+			vertical-align: top;
+			/* white-space: normal; */
+		}
+
+		.smooth-dnd-draggable-wrapper.vertical {
+			overflow: hidden;
+			display: block;
+		}
+
+		.smooth-dnd-draggable-wrapper.animated {
+			transition: transform ease;
+		}
+
+		.smooth-dnd-ghost * {
+			box-sizing: border-box;
+		}
+
+		.smooth-dnd-ghost.animated {
+			transition: all ease-in-out;
+		}
+
+		.smooth-dnd-disable-touch-action * {
+			touch-actions: none;
+			-ms-touch-actions: none;
+		}
+
+		.smooth-dnd-no-user-select * {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
 	</style>
 	<style data-styled="active" data-styled-version="5.0.0"></style>
 	<style>
 		body {
-				background-color: #575757;
+			background-color: #575757;
 		}
 	</style>
 
 	<meta id="viewportMeta" name="viewport" content="width=device-width, initial-scale=1" data-react-helmet="true">
-	
+
 	<style type="text/css" media="print">
 		@media print {
-		  * {
-		  	-webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
-		    	color-adjust: exact !important;                 /*Firefox*/
-		     }
+			* {
+				-webkit-print-color-adjust: exact !important;
+				/* Chrome, Safari */
+				color-adjust: exact !important;
+				/*Firefox*/
+			}
 
-		  .removeMarginTopOnPrint {
-		  	 margin: 0px !important;
-		  }
+			.removeMarginTopOnPrint {
+				margin: 0px !important;
+			}
 
-		  a[href]:after {
-		    content: none !important;
-		  }
+			a[href]:after {
+				content: none !important;
+			}
 
-		  .item-object, .resume-section-container.editable {
-		  	border: 1px solid transparent !important;
-		  }
+			.item-object,
+			.resume-section-container.editable {
+				border: 1px solid transparent !important;
+			}
 
-		  .no-print, .no-print *
-		  {
+			.no-print,
+			.no-print * {
 				display: none !important;
-		  }
+			}
 
 		}
+
 		@page {
-		    size:A4 portrait;
-		    margin-left: 0px;
-		    margin-right: 0px;
-		    margin-top: -100px;
-		    margin-bottom: 0px;
-		    margin: 0;
-		    -webkit-print-color-adjust: exact;
+			size: A4 portrait;
+			margin-left: 0px;
+			margin-right: 0px;
+			margin-top: -100px;
+			margin-bottom: 0px;
+			margin: 0;
+			-webkit-print-color-adjust: exact;
 		}
 	</style>
 
@@ -71,498 +214,1000 @@
 			-webkit-user-select: none;
 			-ms-user-select: none;
 
-			user-drag: none; 
+			user-drag: none;
 			-webkit-user-drag: none;
 			-ms-user-select: none;
 		}
 	</style>
-	
+
 </head>
 
-<body >
+<body>
 
 	<div class="bodyDiv">
 		<div class="resume-editor-content-box center-block">
-		<div id="resume-pm" class="resume-renderer resume-body-font center-resume">
-		
-		<style class="resume-colors-style">
-			#resume-pm .resume-first-color {
-				color: #002878 !important;
-			}
+			<div id="resume-pm" class="resume-renderer resume-body-font center-resume">
 
-			#resume-pm .resume-first-color::-webkit-input-placeholder,
-			#resume-pm .resume-first-color input::-webkit-input-placeholder {
-				color: #002878 !important;
-			}
-			#resume-pm .resume-first-color:-moz-placeholder,
-			#resume-pm .resume-first-color input:-moz-placeholder {
-				color: #002878 !important;
-			}
-			#resume-pm .resume-first-color::-moz-placeholder,
-			#resume-pm .resume-first-color input::-moz-placeholder {
-				color: #002878 !important;
-			}
-			#resume-pm .resume-first-color:-ms-input-placeholder,
-			#resume-pm .resume-first-color input:-ms-input-placeholder {
-				color: #002878 !important;
-			}
+				<style class="resume-colors-style">
+					#resume-pm .resume-first-color {
+						color: #002878 !important;
+					}
 
-			#resume-pm .resume-first-background {
-				background-color: #002878 !important;
-			}
-			#resume-pm .resume-before-first-background::before {
-				background-color: #002878 !important;
-			}
-			#resume-pm .resume-first-border {
-				border-color: #002878 !important;
-			}
-			#resume-pm .resume-first-fill {
-				fill: #002878 !important;
-			}
-			#resume-pm .resume-first-stroke {
-				stroke: #002878 !important;
-			}
+					#resume-pm .resume-first-color::-webkit-input-placeholder,
+					#resume-pm .resume-first-color input::-webkit-input-placeholder {
+						color: #002878 !important;
+					}
 
-			/*#resume-pm .resume-second-color {
-				color: #00B8FD !important;
-			}
+					#resume-pm .resume-first-color:-moz-placeholder,
+					#resume-pm .resume-first-color input:-moz-placeholder {
+						color: #002878 !important;
+					}
 
-			#resume-pm .resume-second-color::-webkit-input-placeholder,
-			#resume-pm .resume-second-color input::-webkit-input-placeholder {
-				color: #00B8FD !important;
-			}
-			#resume-pm .resume-second-color:-moz-placeholder,
-			#resume-pm .resume-second-color input:-moz-placeholder {
-				color: #00B8FD !important;
-			}
-			#resume-pm .resume-second-color::-moz-placeholder,
-			#resume-pm .resume-second-color input::-moz-placeholder {
-				color: #00B8FD !important;
-			}
-			#resume-pm .resume-second-color:-ms-input-placeholder,
-			#resume-pm .resume-second-color input:-ms-input-placeholder {
-				color: #00B8FD !important;
-			}
+					#resume-pm .resume-first-color::-moz-placeholder,
+					#resume-pm .resume-first-color input::-moz-placeholder {
+						color: #002878 !important;
+					}
 
+					#resume-pm .resume-first-color:-ms-input-placeholder,
+					#resume-pm .resume-first-color input:-ms-input-placeholder {
+						color: #002878 !important;
+					}
 
-			#resume-pm .resume-second-color {
-				color: #00B8FD !important;
-			}
+					#resume-pm .resume-first-background {
+						background-color: #002878 !important;
+					}
 
-			#resume-pm .resume-second-color::-webkit-input-placeholder,
-			#resume-pm .resume-second-color input::-webkit-input-placeholder {
-				color: #00B8FD !important;
-			}
-			#resume-pm .resume-second-color:-moz-placeholder,
-			#resume-pm .resume-second-color input:-moz-placeholder {
-				color: #00B8FD !important;
-			}
-			#resume-pm .resume-second-color::-moz-placeholder,
-			#resume-pm .resume-second-color input::-moz-placeholder {
-				color: #00B8FD !important;
-			}
-			#resume-pm .resume-second-color:-ms-input-placeholder,
-			#resume-pm .resume-second-color input:-ms-input-placeholder {
-				color: #00B8FD !important;
-			}
+					#resume-pm .resume-before-first-background::before {
+						background-color: #002878 !important;
+					}
+
+					#resume-pm .resume-first-border {
+						border-color: #002878 !important;
+					}
+
+					#resume-pm .resume-first-fill {
+						fill: #002878 !important;
+					}
+
+					#resume-pm .resume-first-stroke {
+						stroke: #002878 !important;
+					}
+
+					#resume-pm .resume-second-color {
+						color: #008CFF !important;
+					}
+
+					#resume-pm .resume-second-color::-webkit-input-placeholder,
+					#resume-pm .resume-second-color input::-webkit-input-placeholder {
+						color: #008CFF !important;
+					}
+
+					#resume-pm .resume-second-color:-moz-placeholder,
+					#resume-pm .resume-second-color input:-moz-placeholder {
+						color: #008CFF !important;
+					}
+
+					#resume-pm .resume-second-color::-moz-placeholder,
+					#resume-pm .resume-second-color input::-moz-placeholder {
+						color: #008CFF !important;
+					}
+
+					#resume-pm .resume-second-color:-ms-input-placeholder,
+					#resume-pm .resume-second-color input:-ms-input-placeholder {
+						color: #008CFF !important;
+					}
 
 
-			#resume-pm .resume-second-background {
-				background-color: #00B8FD !important;
-			}
-			#resume-pm .resume-before-second-background::before {
-				background-color: #00B8FD !important;
-			}
-			#resume-pm .resume-second-border {
-				border-color: #00B8FD !important;
-			}
-			#resume-pm .resume-second-fill {
-				stroke: #00B8FD !important;
-			}
-			#resume-pm .resume-second-stroke {
-				stroke: #00B8FD !important;
-			}*/
+					#resume-pm .resume-second-color {
+						color: #008CFF !important;
+					}
 
-			#resume-pm .resume-second-color {
-				color: #008CFF !important;
-			}
+					#resume-pm .resume-second-color::-webkit-input-placeholder,
+					#resume-pm .resume-second-color input::-webkit-input-placeholder {
+						color: #008CFF !important;
+					}
 
-			#resume-pm .resume-second-color::-webkit-input-placeholder,
-			#resume-pm .resume-second-color input::-webkit-input-placeholder {
-				color: #008CFF !important;
-			}
-			#resume-pm .resume-second-color:-moz-placeholder,
-			#resume-pm .resume-second-color input:-moz-placeholder {
-				color: #008CFF !important;
-			}
-			#resume-pm .resume-second-color::-moz-placeholder,
-			#resume-pm .resume-second-color input::-moz-placeholder {
-				color: #008CFF !important;
-			}
-			#resume-pm .resume-second-color:-ms-input-placeholder,
-			#resume-pm .resume-second-color input:-ms-input-placeholder {
-				color: #008CFF !important;
-			}
+					#resume-pm .resume-second-color:-moz-placeholder,
+					#resume-pm .resume-second-color input:-moz-placeholder {
+						color: #008CFF !important;
+					}
+
+					#resume-pm .resume-second-color::-moz-placeholder,
+					#resume-pm .resume-second-color input::-moz-placeholder {
+						color: #008CFF !important;
+					}
+
+					#resume-pm .resume-second-color:-ms-input-placeholder,
+					#resume-pm .resume-second-color input:-ms-input-placeholder {
+						color: #008CFF !important;
+					}
 
 
-			#resume-pm .resume-second-color {
-				color: #008CFF !important;
-			}
+					#resume-pm .resume-second-background {
+						background-color: #008CFF !important;
+					}
 
-			#resume-pm .resume-second-color::-webkit-input-placeholder,
-			#resume-pm .resume-second-color input::-webkit-input-placeholder {
-				color: #008CFF !important;
-			}
-			#resume-pm .resume-second-color:-moz-placeholder,
-			#resume-pm .resume-second-color input:-moz-placeholder {
-				color: #008CFF !important;
-			}
-			#resume-pm .resume-second-color::-moz-placeholder,
-			#resume-pm .resume-second-color input::-moz-placeholder {
-				color: #008CFF !important;
-			}
-			#resume-pm .resume-second-color:-ms-input-placeholder,
-			#resume-pm .resume-second-color input:-ms-input-placeholder {
-				color: #008CFF !important;
-			}
+					#resume-pm .resume-before-second-background::before {
+						background-color: #008CFF !important;
+					}
 
+					#resume-pm .resume-second-border {
+						border-color: #008CFF !important;
+					}
 
-			#resume-pm .resume-second-background {
-				background-color: #008CFF !important;
-			}
-			#resume-pm .resume-before-second-background::before {
-				background-color: #008CFF !important;
-			}
-			#resume-pm .resume-second-border {
-				border-color: #008CFF !important;
-			}
-			#resume-pm .resume-second-fill {
-				stroke: #008CFF !important;
-			}
-			#resume-pm .resume-second-stroke {
-				stroke: #008CFF !important;
-			}
+					#resume-pm .resume-second-fill {
+						stroke: #008CFF !important;
+					}
 
+					#resume-pm .resume-second-stroke {
+						stroke: #008CFF !important;
+					}
 
-				small {
-				font-size: 10px;
-				position: relative;
-				top: 0px;
-				display: inline-block;
-				margin: 0 0 0 5px;
-				padding: 1px 3px;
-				vertical-align: super;
-				border-radius: 57px;
-				background: #5c81f2;
+					small {
+						font-size: 10px;
+						position: relative;
+						top: 0px;
+						display: inline-block;
+						margin: 0 0 0 5px;
+						padding: 1px 3px;
+						vertical-align: super;
+						border-radius: 57px;
+						background: #5c81f2;
 
-				}
+					}
 
-				small pre {
-	margin: 0;
-padding: 0;
-font-family: sans-serif;
-color: #fff;
-background: transparent;
-border: 0;
-text-transform: lowercase !important;
+					small pre {
+						margin: 0;
+						padding: 0;
+						font-family: sans-serif;
+						color: #fff;
+						background: transparent;
+						border: 0;
+						text-transform: lowercase !important;
 
-}
+					}
+				</style>
+				<style class="resume-fonts-style">
+					#resume-pm .resume-heading-font {
+						font-family: "Rubik", Arial, Helvetica, "Noto Sans Devanagari", "Noto Sans CJK SC Thin", "Noto Sans SC", "Noto Sans Hebrew", sans-serif !important;
+					}
 
-		</style>
-		<style class="resume-fonts-style">
-			#resume-pm .resume-heading-font {
-				font-family: "Rubik", Arial, Helvetica, "Noto Sans Devanagari", "Noto Sans CJK SC Thin", "Noto Sans SC", "Noto Sans Hebrew", sans-serif !important;
-			}
+					#resume-pm.resume-body-font {
+						font-family: "Inter UI", Arial, Helvetica, "Noto Sans Devanagari", "Noto Sans CJK SC Thin", "Noto Sans SC", "Noto Sans Hebrew", sans-serif !important;
+					}
+				</style>
+				<style class="resume-background-style">
+					#resume-pm .resume-background-wrapper {
+						background-size: cover;
+						background-image: url('resources/images/background/bg6.png') !important;
+					}
+				</style>
 
-			#resume-pm.resume-body-font {
-				font-family: "Inter UI", Arial, Helvetica, "Noto Sans Devanagari", "Noto Sans CJK SC Thin", "Noto Sans SC", "Noto Sans Hebrew", sans-serif !important;
-			}
-		</style>
-		<style class="resume-background-style">
-			#resume-pm .resume-background-wrapper {
-				background-size: cover;
-				background-image: url('resources/images/background/bg6.png') !important;
-			}
-		</style>
-					
-			<!-- First page start -->
-			<div style="position: relative; margin-top: 40px;" class="removeMarginTopOnPrint">
-			<div class="resume-renderer-page resume-layout-small browser-resume-page resume-layout-newcondensed ">
-										
-										<div class="resume-background-wrapper"></div>
-										<div class="resume-page-wrapper">
-												
-											<!-- Page 1 header Start-->
-											<div class="resume-header resume-header-with-photo editable">
-											<div class="resume-header-col resume-header-col-left">
-											<div class="editable-field-wrapper relative">
-											<div contenteditable="false" class="text-field full-width-field editable-field name resume-heading-font resume-first-color uppercase-name" placeholder="Your Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">PRIYANSHU MISHRA</div>
-											</div>
-											<div class="resume-header-title-placeholder">
-											<div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field title resume-second-color resume-body-font " placeholder="Your next desired role?" sandbox="allow-same-origin" style="white-space: pre-wrap;">Software Developer</div></div>
-											</div>
-											<div class="with-icon-container top-sm resume-header-items header-info-container"><div class="resume-heading-font with-icon"><i class="icon icon-42-free-call-phone"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field " placeholder="Phone" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="tel:+919473748002">9473748002</a></div></div></div><div class="resume-heading-font with-icon"><i class="icon icon-email-01"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field " placeholder="Email" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="mailto:priyanshumindia@gmail.com">priyanshumindia@gmail.com</a></div></div></div><div class="resume-heading-font with-icon url-link"><i class="icon icon-17-link"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field " placeholder="Website/Link" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="http://elpriyanshu.github.io">elpriyanshu.github.io</a></div></div></div><div class="resume-heading-font with-icon"><i class="icon icon-05-pin-map"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field " placeholder="Location" sandbox="allow-same-origin" style="white-space: pre-wrap;">Delhi/NCR</div></div></div>
-											</div>
-											</div>
+				<!-- First page start -->
+				<div style="position: relative; margin-top: 40px;" class="removeMarginTopOnPrint">
+					<div class="resume-renderer-page resume-layout-small browser-resume-page resume-layout-newcondensed ">
 
-											<div class="resume-header-col resume-header-col-right photo-container relative"><div class="photo relative photo-round editable" style="">
-											<img src="resources/avatars/priyanshuProfilePic.jpg" class="priyanshuProfileImg">
+						<div class="resume-background-wrapper"></div>
+						<div class="resume-page-wrapper">
 
-											<!-- <div class="responsive-transition-item photo-button-container animated-hover fadeIn Grid Grid--justifyCenter Grid--alignCenter"><div class="Grid--justifyCenter Grid--alignCenter"><button type="button" class="btn btn-primary btn-icon"><i class="icon icon-cloud-upload btn-icon-single"></i></button><button type="button" class="btn btn-danger btn-icon m-left-2"><i class="icon icon-eye-disabled btn-icon-single"></i></button></div>
-											</div> -->
-
-											</div>
-											</div>
-											<div class="clearfix"></div>
-											</div>
-											<!-- Page 1 header end-->
-
-											<!-- Page 1 body Start-->
-											<div>
-												<!-- Page 1 Left Side Start-->
-												<div class="resume-renderer-two-column">
-
-													<div id="SummarySection-0" class="resume-section SummarySection">
-
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Summary" sandbox="allow-same-origin" style="white-space: pre-wrap;">S U M M A R Y</div></div></div></div>
-														</div>
-
-														<div class="moveable-items"><div class="resume-item-holder line-item editable hide-separating-border"><div id="sections-0-items-0" draggable="false"><div class="item-object summary-item"><div class="inner"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field" placeholder="What's the one thing you want someone to remember after reading your resume?" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;" spellcheck="false"><div>Computer Engineering fresher seeking for an opportunity to apply my skills to use and contribute towards upcoming technology that impacts the organization as well as broadens my scope of learning from the organization’s team members.</div><div>My area of expertise are Java, Competitive Coding, and Data Structures & Algorithms,Spring Boot Framework. </div></div></div></div></div></div></div>
-														</div>
-													</div>
-
-													<div id="EducationSection-0" class="resume-section EducationSection">
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Education" sandbox="allow-same-origin" style="white-space: pre-wrap;">E D U C A T I O N</div></div></div></div>
-													</div>
-														<div class="moveable-items"><div class="resume-item-holder line-item editable"><div id="sections-4-items-0" draggable="false"><div class="item-object education-item"><div class="inner"><div class="education-item-not-gpa"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-degree resume-first-color resume-heading-font" placeholder="Degree and Field of Study" sandbox="allow-same-origin" style="white-space: pre-wrap;">B. Tech In Computer Science Engineering, Specialization In AIML</div></div><div class="with-icon-container top-xty"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field item-institution resume-second-color resume-heading-font" placeholder="School or University" sandbox="allow-same-origin" style="white-space: pre-wrap;">The North Cap University                               </div></div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="editable-field-xs">2020 - 2024</span></a><div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field editable-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin" style="white-space: pre-wrap;">Gurugram, Haryana</div></div></div></div></div><div class="education-item-gpa-container"><div class="education-item-gpa"><div class="text-center gpa-text-wrapper"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field education-item-gpa-title" placeholder="GPA" sandbox="allow-same-origin" style="white-space: pre-wrap;">%</div></div></div><div class="education-item-gpa-container-left"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field bold gpa-value resume-second-color inline-input" placeholder="4.0" sandbox="allow-same-origin" style="white-space: pre-wrap;">75</div></div><span class="separator"> / </span><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field gpa-value inline-input" placeholder="4.0" sandbox="allow-same-origin" style="white-space: pre-wrap;">100</div></div></div></div></div></div></div></div></div><div class="resume-item-holder line-item editable"><div id="sections-4-items-1" draggable="false"><div class="item-object education-item"><div class="inner"><div class="education-item-not-gpa"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-degree resume-first-color resume-heading-font" placeholder="Degree and Field of Study" sandbox="allow-same-origin" style="white-space: pre-wrap;">XII (Senior Secondary) </div></div><div class="with-icon-container top-xty"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field item-institution resume-second-color resume-heading-font" placeholder="School or University" sandbox="allow-same-origin" style="white-space: pre-wrap;">Hope Hall Foundation School                                  </div></div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="editable-field-xs">2020</span></a><div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field editable-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin" style="white-space: pre-wrap;">R.K. Puram, New Delhi</div></div></div></div></div><div class="education-item-gpa-container"><div class="education-item-gpa"><div class="text-center gpa-text-wrapper"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field education-item-gpa-title" placeholder="GPA" sandbox="allow-same-origin" style="white-space: pre-wrap;">%</div></div></div><div class="education-item-gpa-container-left"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field bold gpa-value resume-second-color inline-input" placeholder="4.0" sandbox="allow-same-origin" style="white-space: pre-wrap;">73</div></div><span class="separator"> / </span><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field gpa-value inline-input" placeholder="4.0" sandbox="allow-same-origin" style="white-space: pre-wrap;">100</div></div></div></div></div></div></div></div></div><div class="resume-item-holder line-item editable hide-separating-border"><div id="sections-4-items-2" draggable="false"><div class="item-object education-item"><div class="inner"><div class="education-item-not-gpa"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-degree resume-first-color resume-heading-font" placeholder="Degree and Field of Study" sandbox="allow-same-origin" style="white-space: pre-wrap;">X (Secondary School)</div></div><div class="with-icon-container top-xty"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field item-institution resume-second-color resume-heading-font" placeholder="School or University" sandbox="allow-same-origin" style="white-space: pre-wrap;">Hope Hall Foundation School                                               </div></div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="editable-field-xs">2018</span></a><div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field editable-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin" style="white-space: pre-wrap;">R.K. Puram, New Delhi</div></div></div></div></div><div class="education-item-gpa-container"><div class="education-item-gpa"><div class="text-center gpa-text-wrapper"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field education-item-gpa-title" placeholder="%" sandbox="allow-same-origin" style="white-space: pre-wrap;">%</div></div></div><div class="education-item-gpa-container-left"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field bold gpa-value resume-second-color inline-input" placeholder="4.0" sandbox="allow-same-origin" style="white-space: pre-wrap;">73</div></div><span class="separator"> / </span><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field gpa-value inline-input" placeholder="4.0" sandbox="allow-same-origin" style="white-space: pre-wrap;">100</div></div></div></div></div></div></div></div></div>
-														</div>
-													</div>
-													
-													<div id="ExperienceSection-0" class="resume-section ExperienceSection">
-
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Experience" sandbox="allow-same-origin" style="white-space: pre-wrap;">E X P E R I E N C E</div></div></div></div></div>
-														<div class="resume-section-text-container"><div class="text-field full-width-field resume-first-color resume-heading-font" style="white-space: pre-wrap; text-transform: uppercase;">Internships</div></div>
-														
-														<div class="moveable-items">
-															<div class="resume-item-holder line-item editable hide-separating-border" id="sections-2-items-3">
-																<div class="item-object experience-item">
-																	<div class="inner">
-																		<div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin" style="white-space: pre-wrap;">Software Developer Intern</div></div>
-																		<div class="with-icon-container top-xty"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">Airports Authority of India</div></div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="editable-field-xs">08/2023 - 09/2023</span></a><div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin" style="white-space: pre-wrap;">Gurgaon</div></div></div></div>
-																		<div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><a href="https://drive.google.com/file/d/1IimQwkFOKFtv9iUSouZ_c128VNRZ2b9w/view?usp=sharing" id="qthzmm5mfv"> Ministry of Civil Aviation | Govt. of India</a></div></div>
-																		<div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative">
-																			<div contenteditable="false" class="text-field editable-field-muted editable-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true" >
-																				<div><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="pv10drtnnk"><b>Product:</b> Project Management Tool</a></div>
-																				<div><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="j4qw0dxmsa" style=""><b></b><b style="">Responsibility:</b> <u><i>Design and Develope Application from scratch</i></u></a></div>
-																				<div><a href="" id="j4qw0dxmsaj" style=""><b></b><b style="">Technology Stack:</b> <u><i>Java, Spring boot, JPA, Postgres, Theamleaf, RestAPI</i></u></a></div>
-																			</div>
-																			</div></div></div>
-																		</div>
-																	</div>
-																</div>																
-															</div>
-														</div>
-
-														<div class="moveable-items">
-															<div class="resume-item-holder line-item editable hide-separating-border" id="sections-2-items-3">
-																<div class="item-object experience-item">
-																	<div class="inner">
-																		<div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin" style="white-space: pre-wrap;">Application Developer</div></div>
-																		<div class="with-icon-container top-xty"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">Sarsquare Studios</div></div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="editable-field-xs">06/2023 - 07/2023</span></a><div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin" style="white-space: pre-wrap;">Gurgaon</div></div></div></div>
-																		<div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><a href="https://drive.google.com/file/d/1IimQwkFOKFtv9iUSouZ_c128VNRZ2b9w/view?usp=sharing" id="qthzmm5mfv">Software Development and Consultancy Company</a></div></div>
-																		<div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field-muted editable-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="pv10drtnnk"><b style="">Product:</b> Microservice for Stream Processing</a><div><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="j4qw0dxmsa" style=""><b></b><b style="">Responsibility:</b> <u><i>Devlop Microservices to Consume Data from Kafka</i></u></a></div><div><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="j4qw0dxmsa" style=""><b></b><b style="">Technology Stack:</b> <u><i>Java, Spring boot, Microservices, Kafka</i></u></a></div></div></div></div></div></div>
-																		<!-- <div><a href="" id="j4qw0dxmsaj" style=""><b></b><b style="">Technology Stack:</b> <u><i>Java, Spring boot, Microservices, Kafka</i></u></a></div> -->
-																	</div>
-																</div>																
-															</div>
-														</div>
-
-														<!-- <div class="moveable-items">
-															<div class="resume-item-holder line-item editable hide-separating-border" id="sections-3-items-1" >
-																<div class="item-object experience-item">
-																	<div class="inner">
-																		<div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin" style="white-space: pre-wrap;">Microsoft Azure</div></div>
-																		<div class="with-icon-container top-xty"><div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field editable-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">Microsoft Learn | AICTE</div></div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="editable-field-xs">06/2021 - 08/2021</span></a></div>
-																		<div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><a href="#experienceLetterURL" id="qthzmm5mfv">Virtual internship program by Microsft and AICTE on Application build and cloud deployment using Azure Services</a></div></div>
-																		<div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field editable-field-muted editable-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><a href="" id="pv10drtnnk"><b style="">Technology Stack:</b> Asure Bot Services, QnA Maker, Static Web Apps, HTML, CSS, JS</a></div></div></div></div></div>
-																	</div>
-																</div>
-															</div>
-														</div> -->
-
-													</div>
-
-													<div id="ResponsibilitySection-0" class="resume-section ResponsibilitySection">
-
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Experience" sandbox="allow-same-origin" style="white-space: pre-wrap;">R E S P O N S I B I L I T I E S</div></div></div></div></div>
-
-														<div class="moveable-items">
-
-															<div class="resume-item-holder line-item editable hide-separating-border"><div id="sections-3-items-1" draggable="false"><div class="item-object experience-item"><div class="inner"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin" style="white-space: pre-wrap;">IEEE CS</div></div><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><a href="#experienceLetterURL" id="qthzmm5mfv">Operating Committee Lead</a></div></div><div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field editable-field-muted editable-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><!-- <a href="" id="pv10drtnnk"><b style="">Events Coordinated</b> -----</a>--><div><a href="" id="j4qw0dxmsa" style=""><b></b><b style="">Responsibilities:</b> Coordinating all the commitees & Event Management</a></div></div></div></div></div></div></div></div></div>
-															</div>
-														</div>
-
-
-													</div>
-
-													<div id="ProjectSection-0" class="resume-section ProjectSection">
-
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Experience" sandbox="allow-same-origin" style="white-space: pre-wrap;">P R O J E C T S</div></div></div></div></div>
-
-														<div class="moveable-items">
-
-															<div class="resume-item-holder line-item editable hide-separating-border"><div id="sections-3-items-1" draggable="false"><div class="item-object experience-item"><div class="inner"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin" style="white-space: pre-wrap;">Virtual Mouse</div></div><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><a href="#experienceLetterURL" id="qthzmm5mfv"><b style="">Cursor Control using hand gesture</b></a></div></div><div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field editable-field-muted editable-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;"><a href="" id="pv10drtnnk">Model-based hand tracking system that uses a single camera to monitor the 3D position of a hand, Enabling user to control cursor using hand gestures.</a><div><a href="" id="j4qw0dxmsa" style=""><b></b></a></div></div></div></div></div></div></div></div></div>
-															</div>
-														</div>
-
-
-													</div>
-
-													<div id="AchievementSection-0" class="resume-section AchievementSection">
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Achievements" sandbox="allow-same-origin" style="white-space: pre-wrap;">A W A R D S</div></div></div></div>
-														</div>
-														<div class="moveable-items"><div class="resume-item-holder line-item editable hide-separating-border"><div id="sections-5-items-0" draggable="false"><div class="item-object achievement-item"><div class="inner"><div class="achievement-item-content"><div class="resume-item-icon achievement-item-icon resume-second-color editable"><div class=" icon-with-circle" data-id=""><i data-icon-name="88-certificate-01" class="icon resume-second-color icon-88-certificate-01"></i></div></div><div class="full-width"><div class="editable-field-wrapper relative"><a><div contenteditable="false" class="text-field full-width-field editable-field achievement-item-title resume-first-color resume-heading-font" placeholder="What are you most proud of?" sandbox="allow-same-origin" style="white-space: pre-wrap;">Winner at Mind benders Hackthon | Oct 2022</div></div><div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field editable-field-xs" placeholder="URL" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="https://drive.google.com/file/d/14vG2oPlyyTrccbP6ku6vHRrgJI8hWuvS/view?usp=sharing">Certificate</a></div></div></div></div></div><div class="padded-item-content"></div></div></div></div></div>
-														</div>
-													</div>
-
-													<div id="SocialSection-0" class="resume-section SocialSection">
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Find me online" sandbox="allow-same-origin" style="white-space: pre-wrap;">F I N D   M E   O N L I N E</div></div></div></div>
-														</div>
-														<div class="moveable-items"><div class="resume-item-holder line-item editable"><div id="sections-6-items-0" draggable="false"><div class="item-object social-item"><div class="inner"><div class="social-item-container editable container-min-height"><div class="resume-item-icon social-item-icon"><div class=" icon-with-circle" data-id=""><i data-icon-name="26-linkedin" class="icon resume-second-color icon-26-linkedin"></i></div></div><div class="social-item-content "><div class="full-width"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field social-item-title resume-first-color resume-heading-font" placeholder="Social Network" sandbox="allow-same-origin" style="white-space: pre-wrap;">LinkedIn</div></div><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field social-item-link" placeholder="Username" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="https://www.linkedin.com/in/priyanshu-mishra1/">priyanshu</a></div></div></div></div></div></div></div></div></div><div class="resume-item-holder line-item editable"><div id="sections-6-items-1" draggable="false"><div class="item-object social-item"><div class="inner"><div class="social-item-container editable container-min-height"><div class="resume-item-icon social-item-icon"><div class=" icon-with-circle" data-id=""><i data-icon-name="github-square" class="icon resume-second-color icon-github-square"></i></div></div><div class="social-item-content "><div class="full-width"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field social-item-title resume-first-color resume-heading-font" placeholder="Social Network" sandbox="allow-same-origin" style="white-space: pre-wrap;">GitHub</div></div><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field social-item-link" placeholder="Username" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="https://github.com/elpriyanshu">elpriyanshu</a></div></div></div></div></div></div></div></div></div><div class="resume-item-holder line-item editable hide-separating-border"><div id="sections-6-items-2" draggable="false"><div class="item-object social-item"><div class="inner"><div class="social-item-container editable container-min-height"><div class="resume-item-icon social-item-icon"><div class=" icon-with-circle" data-id=""><i data-icon-name="flickr" class="icon resume-second-color icon-flickr"></i></div></div><div class="social-item-content "><div class="full-width"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field social-item-title resume-first-color resume-heading-font" placeholder="Social Network" sandbox="allow-same-origin" style="white-space: pre-wrap;">Updated Resume</div></div><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field social-item-link" placeholder="Username" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="https://elpriyanshu.github.io/">elpriyanshu.github.io</a></div></div></div></div></div></div></div></div></div>
-														</div>
-													</div>
-
-												</div>
-												<!-- Page 1 Left Side end-->
-
-												<!-- Page 1 Right Side Start-->
-												<div class="resume-renderer-two-column">
-
-													<div id="TechnologySection-0" class="resume-section TechnologySection">
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Skills" sandbox="allow-same-origin" style="white-space: pre-wrap;">T E C H N O L O G I E S</div></div></div></div>
-														</div>
-														<div class="moveable-items"><div class="resume-item-holder line-item editable"><div id="sections-1-items-0" draggable="false"><div class="item-object technologies-item"><div class="inner"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-title resume-heading-font resume-second-color" placeholder="Group Title" sandbox="allow-same-origin" style="white-space: pre-wrap;">Front End</div></div><div class="tags">
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-0" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">HTML5</div></div>
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-1" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">CSS</div></div>
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-2" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">JavaScript</div></div>
-														<!-- <div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">AngularJS</div></div> -->
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-4" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">Bootstrap 4</div></div>
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-5" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">Swagger UI</div></div>
-														
-													</div></div></div></div></div>
-														
-														<div class="resume-item-holder line-item editable"><div id="sections-1-items-1" draggable="false"><div class="item-object technologies-item"><div class="inner"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-title resume-heading-font resume-second-color" placeholder="Group Title" sandbox="allow-same-origin" style="white-space: pre-wrap;">Back End</div></div><div class="tags">
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-0" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">Java EE</div></div>
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-1" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">Python</div></div>
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-2" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">SQL</div></div>
-														<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">Spring Boot</div></div>
-
-														
-													</div></div></div></div></div>
-
-														<div class="resume-item-holder line-item editable hide-separating-border"><div id="sections-1-items-2" draggable="false"><div class="item-object technologies-item"><div class="inner">
-														<div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-title resume-heading-font resume-second-color" placeholder="Group Title" sandbox="allow-same-origin" style="white-space: pre-wrap;">Dev, Operations &amp; Tools</div></div>
-														<div class="tags">
-															<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-0" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">SCM: Git</div></div>
-
-															<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">Maven</div></div>
-															<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-4" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">Docker</div></div>
-															<div class="editable-field-wrapper editable-field-wrapper-inline relative"><div contenteditable="false" class="text-field tag resume-first-color surrounding-border tag-5" placeholder="Tool / Technology" sandbox="allow-same-origin" style="white-space: pre-wrap;">Liquibase</div></div>
-														</div>
-													</div></div></div></div>
-														</div>
-													</div>
-
-													<div id="CertificationsSection-0" class="resume-section CertificationsSection">
-														
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Certifications" sandbox="allow-same-origin" style="white-space: pre-wrap;">C E R T I F I C A T I O N S</div></div></div></div>
-														</div>
-														
-
-														<div class="moveable-items">
-															<div class="resume-item-holder line-item editable hide-separating-border">
-																<div id="sections-2-items-0" draggable="false">
-																	<div class="item-object activity-item">
-																		<div class="inner"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-title resume-first-color resume-heading-font" placeholder="Project Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">AWS Cloud Practitioner </div></div>
-																			<div class="with-icon-container top-xty">
-																				<div contenteditable="false" class="text-field editable-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">Amazon Web Services (AWS)</div>
-																				<div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field editable-field-muted editable-field-sm item-bullet" placeholder="What was a successful outcome of your work? (e.g. Raised $3,000 for the charity)" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;">Acquired knowledge of core AWS services, infrastructure, cloud computing, security concepts and billing & pricing models</div></div></div></div></div><div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field editable-field-xs" placeholder="URL" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="link">Certificate</a></div></div></div>
-																			</div>
-																		</div>
-																	</div>
-																	<div style="clear: both;"></div>
-																</div>
-															</div>
-														</div>
-														
-													</div>
-
-													<div id="CoursesSection-0" class="resume-section CoursesSection">
-													
-														<div class="resume-section-container editable"><div><div class="resume-section-text-container"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field resume-section-text resume-heading-font" placeholder="Courses" sandbox="allow-same-origin" style="white-space: pre-wrap;">C O U R S E S</div></div></div></div>
-														</div>
-
-														<div class="moveable-items">
-															<div class="resume-item-holder line-item editable hide-separating-border">
-																<div id="sections-2-items-0" draggable="false">
-																	<div class="item-object activity-item">
-																		<div class="inner"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-title resume-first-color resume-heading-font" placeholder="Project Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">HTML, CSS, and Javascript for Web Development </div></div>
-																			<div class="with-icon-container top-xty">
-																				<div contenteditable="false" class="text-field editable-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">Johns Hopkins University | Coursera</div>
-																				<div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field editable-field-muted editable-field-sm item-bullet" placeholder="What was a successful outcome of your work? (e.g. Raised $3,000 for the charity)" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;">Acquired proficiency in modern web page implementation, responsive design, and building functional web applications using HTML, CSS & JS</div></div></div></div></div><div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field editable-field-xs" placeholder="URL" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="https://www.coursera.org/account/accomplishments/verify/KC2647NDPPYN">Certificate</a></div></div></div>
-																			</div>
-																		</div>
-																	</div>
-																	<div style="clear: both;"></div>
-																</div>
-															</div>
-															<div class="resume-item-holder line-item editable hide-separating-border">
-																<div id="sections-2-items-0" draggable="false">
-																	<div class="item-object activity-item">
-																		<div class="inner"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-title resume-first-color resume-heading-font" placeholder="Project Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">Data Structures </div></div>
-																			<div class="with-icon-container top-xty">
-																				<div contenteditable="false" class="text-field editable-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">UC San Diego | Coursera</div>
-																				<div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field editable-field-muted editable-field-sm item-bullet" placeholder="What was a successful outcome of your work? (e.g. Raised $3,000 for the charity)" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;">Obtained knowledge and practical experience in implementing data structures for computational problem-solving along with understanding the internal workings and typical use cases of pre-existing implementations.</div></div></div></div></div><div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field editable-field-xs" placeholder="URL" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="https://www.coursera.org/account/accomplishments/verify/QFMUJNBZBTRY">Certificate</a></div></div></div>
-																			</div>
-																		</div>
-																	</div>
-																	<div style="clear: both;"></div>
-																</div>
-															</div>
-															<div class="resume-item-holder line-item editable hide-separating-border">
-																<div id="sections-2-items-0" draggable="false">
-																	<div class="item-object activity-item">
-																		<div class="inner"><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field item-title resume-first-color resume-heading-font" placeholder="Project Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">Python </div></div>
-																			<div class="with-icon-container top-xty">
-																				<div contenteditable="false" class="text-field editable-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin" style="white-space: pre-wrap;">Michigan University | Coursera</div>
-																				<div class="top-xty"><div data-bullet-id="0" class="media top-xty no-bottom"><div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div><div class="media-body item-0"><div class="editable-field-wrapper  relative"><div contenteditable="false" class="text-field editable-field editable-field-muted editable-field-sm item-bullet" placeholder="What was a successful outcome of your work? (e.g. Raised $3,000 for the charity)" sandbox="allow-same-origin" data-decoratable="true" style="white-space: pre-wrap;">Acquired knowledge of Python's data structures and practical experience in using them for complex data analysis.</div></div></div></div></div><div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i><div class="editable-field-wrapper relative"><div contenteditable="false" class="text-field full-width-field editable-field editable-field-xs" placeholder="URL" sandbox="allow-same-origin" style="white-space: pre-wrap;"><a href="https://www.coursera.org/account/accomplishments/verify/VA9PUAXTW9UE">Certificate</a></div></div></div>
-																			</div>
-																		</div>
-																	</div>
-																	<div style="clear: both;"></div>
-																</div>
-															</div>
-														</div>
-														
-														
-
-													</div>
-													
-												</div>
-												<!-- Page 1 Right Side End-->
-												<div style="clear: both;"></div>
-											</div>
-											<!-- Page 1 body End-->
+							<!-- Page 1 header Start-->
+							<div class="resume-header resume-header-with-photo editable">
+								<div class="resume-header-col resume-header-col-left">
+									<div class="content-field-wrapper relative">
+										<div class="text-field full-width-field name resume-heading-font resume-first-color uppercase-name" placeholder="Your Name" sandbox="allow-same-origin">PRIYANSHU MISHRA 
+											<small>
+												<pre class="version"> v1.0 </pre>
+											</small>
 										</div>
-			</div>
-			</div>
-			<!-- First page ends -->
+									</div>
+									<div class="resume-header-title-placeholder">
+										<div class="content-field-wrapper relative">
+											<div class="text-field full-width-field title resume-second-color resume-body-font " placeholder="Your next desired role?" sandbox="allow-same-origin">Software Developer</div>
+										</div>
+									</div>
+									<div class="with-icon-container top-sm resume-header-items header-info-container">
+										<div class="resume-heading-font with-icon"><i class="icon icon-42-free-call-phone"></i>
+											<div class="content-field-wrapper content-field-wrapper-inline relative">
+												<div class="text-field " placeholder="Phone" sandbox="allow-same-origin"><a href="tel:+919473748002">9473748002</a></div>
+											</div>
+										</div>
+										<div class="resume-heading-font with-icon"><i class="icon icon-email-01"></i>
+											<div class="content-field-wrapper content-field-wrapper-inline relative">
+												<div class="text-field " placeholder="Email" sandbox="allow-same-origin"><a href="mailto:priyanshumindia@gmail.com">priyanshumindia@gmail.com</a></div>
+											</div>
+										</div>
+										<div class="resume-heading-font with-icon url-link"><i class="icon icon-17-link"></i>
+											<div class="content-field-wrapper content-field-wrapper-inline relative">
+												<div class="text-field " placeholder="Website/Link" sandbox="allow-same-origin"><a href="http://elpriyanshu.github.io">elpriyanshu.github.io</a></div>
+											</div>
+										</div>
+										<div class="resume-heading-font with-icon"><i class="icon icon-05-pin-map"></i>
+											<div class="content-field-wrapper content-field-wrapper-inline relative">
+												<div class="text-field " placeholder="Location" sandbox="allow-same-origin">Delhi/NCR</div>
+											</div>
+										</div>
+									</div>
+								</div>
 
-			<!-- last page keep this for always in last for margin-->
-			<div style="position: relative; margin-top: 40px;" class="no-print">&nbsp;</div>
-	
-		</div>
+								<div class="resume-header-col resume-header-col-right photo-container relative">
+									<div class="photo relative photo-round editable">
+										<img src="resources/avatars/priyanshuProfilePic.jpg" class="priyanshuProfileImg">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<!-- Page 1 header end-->
+
+							<!-- Page 1 body Start-->
+							<div>
+								<!-- Page 1 Left Side Start-->
+								<div class="resume-renderer-two-column">
+
+									<div id="SummarySection-0" class="resume-section SummarySection">
+
+										<div class="resume-section-container editable">
+											<div class="resume-section-text-container">
+												<div class="content-field-wrapper relative">
+													<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Summary" sandbox="allow-same-origin">S U M M A R Y</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-0-items-0">
+													<div class="item-object summary-item">
+														<div class="inner">
+															<div class="content-field-wrapper  relative">
+																<div class="text-field">
+																	<div>Computer Engineering fresher seeking for an opportunity to apply my skills to use and contribute towards upcoming technology that impacts the organization as well as broadens my scope of learning from the organization’s team members.</div>
+																	<div>My area of expertise are Java, Competitive Coding, and Data Structures & Algorithms,Spring Boot Framework. </div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div id="EducationSection-0" class="resume-section EducationSection">
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Education" sandbox="allow-same-origin">E D U C A T I O N</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable">
+												<div id="sections-4-items-0">
+													<div class="item-object education-item">
+														<div class="inner">
+															<div class="education-item-not-gpa">
+																<div class="content-field-wrapper relative">
+																	<div class="text-field full-width-field item-degree resume-first-color resume-heading-font" placeholder="Degree and Field of Study" sandbox="allow-same-origin">B. Tech In Computer Science Engineering, Specialization In AIML</div>
+																</div>
+																<div class="with-icon-container top-xty">
+																	<div class="content-field-wrapper content-field-wrapper-inline relative">
+																		<div class="text-field item-institution resume-second-color resume-heading-font" placeholder="School or University" sandbox="allow-same-origin">The North Cap University </div>
+																	</div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="content-field-xs">2020-2024</span></a>
+																	<div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i>
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field content-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin">Gurugram, Haryana</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="education-item-gpa-container">
+																<div class="education-item-gpa">
+																	<div class="text-center gpa-text-wrapper">
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field education-item-gpa-title" placeholder="GPA" sandbox="allow-same-origin">%</div>
+																		</div>
+																	</div>
+																	<div class="education-item-gpa-container-left">
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field bold gpa-value resume-second-color inline-input" placeholder="4.0" sandbox="allow-same-origin">75</div>
+																		</div><span class="separator"> / </span>
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field gpa-value inline-input" placeholder="4.0" sandbox="allow-same-origin">100</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="resume-item-holder line-item editable">
+												<div id="sections-4-items-1">
+													<div class="item-object education-item">
+														<div class="inner">
+															<div class="education-item-not-gpa">
+																<div class="content-field-wrapper relative">
+																	<div class="text-field full-width-field item-degree resume-first-color resume-heading-font" placeholder="Degree and Field of Study" sandbox="allow-same-origin">XII (Senior Secondary) </div>
+																</div>
+																<div class="with-icon-container top-xty">
+																	<div class="content-field-wrapper content-field-wrapper-inline relative">
+																		<div class="text-field item-institution resume-second-color resume-heading-font" placeholder="School or University" sandbox="allow-same-origin">Hope Hall Foundation School </div>
+																	</div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="content-field-xs">2019-2020</span></a>
+																	<div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i>
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field content-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin">R.K. Puram, New Delhi</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="education-item-gpa-container">
+																<div class="education-item-gpa">
+																	<div class="text-center gpa-text-wrapper">
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field education-item-gpa-title" placeholder="GPA" sandbox="allow-same-origin">%</div>
+																		</div>
+																	</div>
+																	<div class="education-item-gpa-container-left">
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field bold gpa-value resume-second-color inline-input" placeholder="4.0" sandbox="allow-same-origin">73</div>
+																		</div><span class="separator"> / </span>
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field gpa-value inline-input" placeholder="4.0" sandbox="allow-same-origin">100</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-4-items-2">
+													<div class="item-object education-item">
+														<div class="inner">
+															<div class="education-item-not-gpa">
+																<div class="content-field-wrapper relative">
+																	<div class="text-field full-width-field item-degree resume-first-color resume-heading-font" placeholder="Degree and Field of Study" sandbox="allow-same-origin">X (Secondary School)</div>
+																</div>
+																<div class="with-icon-container top-xty">
+																	<div class="content-field-wrapper content-field-wrapper-inline relative">
+																		<div class="text-field item-institution resume-second-color resume-heading-font" placeholder="School or University" sandbox="allow-same-origin">Hope Hall Foundation School </div>
+																	</div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="content-field-xs">2017-2018</span></a>
+																	<div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i>
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field content-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin">R.K. Puram, New Delhi</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="education-item-gpa-container">
+																<div class="education-item-gpa">
+																	<div class="text-center gpa-text-wrapper">
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field education-item-gpa-title" placeholder="%" sandbox="allow-same-origin">%</div>
+																		</div>
+																	</div>
+																	<div class="education-item-gpa-container-left">
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field bold gpa-value resume-second-color inline-input" placeholder="4.0" sandbox="allow-same-origin">73</div>
+																		</div><span class="separator"> / </span>
+																		<div class="content-field-wrapper content-field-wrapper-inline relative">
+																			<div class="text-field gpa-value inline-input" placeholder="4.0" sandbox="allow-same-origin">100</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div id="ExperienceSection-0" class="resume-section ExperienceSection">
+
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Experience" sandbox="allow-same-origin">E X P E R I E N C E</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="resume-section-text-container">
+											<div class="text-field full-width-field resume-first-color resume-heading-font" style=" text-transform: uppercase;">Internships</div>
+										</div>
+
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable hide-separating-border" id="sections-2-items-3">
+												<div class="item-object experience-item">
+													<div class="inner">
+														<div class="content-field-wrapper relative">
+															<div class="text-field full-width-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin">Software Developer Intern</div>
+														</div>
+														<div class="with-icon-container top-xty">
+															<div class="content-field-wrapper content-field-wrapper-inline relative">
+																<div class="text-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin">Airports Authority of India</div>
+															</div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="content-field-xs">08/2023 - 09/2023</span></a>
+															<div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field content-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin">Gurgaon</div>
+																</div>
+															</div>
+														</div>
+														<div class="content-field-wrapper  relative">
+															<div class="text-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true"><a href="https://drive.google.com/file/d/1IimQwkFOKFtv9iUSouZ_c128VNRZ2b9w/view?usp=sharing" id="qthzmm5mfv"> Ministry of Civil Aviation | Govt. of India</a></div>
+														</div>
+														<div class="top-xty">
+															<div data-bullet-id="0" class="media top-xty no-bottom">
+																<div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div>
+																<div class="media-body item-0">
+																	<div class="content-field-wrapper  relative">
+																		<div class="text-field content-field-muted content-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true">
+																			<div><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="pv10drtnnk"><b>Product:</b> Project Management Tool</a></div>
+																			<div><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="j4qw0dxmsa"><b></b><b>Responsibility:</b> <u><i>Design and Develope Application from scratch</i></u></a></div>
+																			<div><a href="" id="j4qw0dxmsaj"><b></b><b>Technology Stack:</b> <u><i>Java, Spring boot, JPA, Postgres, Theamleaf, RestAPI</i></u></a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable hide-separating-border" id="sections-2-items-3">
+												<div class="item-object experience-item">
+													<div class="inner">
+														<div class="content-field-wrapper relative">
+															<div class="text-field full-width-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin">Application Developer</div>
+														</div>
+														<div class="with-icon-container top-xty">
+															<div class="content-field-wrapper content-field-wrapper-inline relative">
+																<div class="text-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin">Sarsquare Studios</div>
+															</div><a href="" role="button" class="btn btn-sm btn-resume-data btn-link with-icon"><i class="icon icon-40-free-calendar"></i><span class="content-field-xs">06/2023 - 07/2023</span></a>
+															<div class="item-stretch with-icon"><i class="icon icon-05-pin-map"></i>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field content-field-xs font-size-12" placeholder="Location" sandbox="allow-same-origin">Gurgaon</div>
+																</div>
+															</div>
+														</div>
+														<div class="content-field-wrapper  relative">
+															<div class="text-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true"><a href="https://drive.google.com/file/d/1IimQwkFOKFtv9iUSouZ_c128VNRZ2b9w/view?usp=sharing" id="qthzmm5mfv">Software Development and Consultancy Company</a></div>
+														</div>
+														<div class="top-xty">
+															<div data-bullet-id="0" class="media top-xty no-bottom">
+																<div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div>
+																<div class="media-body item-0">
+																	<div class="content-field-wrapper  relative">
+																		<div class="text-field content-field-muted content-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true"><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="pv10drtnnk"><b>Product:</b> Microservice for Stream Processing</a>
+																			<div><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="j4qw0dxmsa"><b></b><b>Responsibility:</b> <u><i>Devlop Microservices to Consume Data from Kafka</i></u></a></div>
+																			<div><a href="https://drive.google.com/file/d/1I7tcnkp0XVLNMWgOfkp4XnM9_FISjEgq/view?usp=sharing" id="j4qw0dxmsa"><b></b><b>Technology Stack:</b> <u><i>Java, Spring boot, Microservices, Kafka</i></u></a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+									<div id="ResponsibilitySection-0" class="resume-section ResponsibilitySection">
+
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Experience" sandbox="allow-same-origin">R E S P O N S I B I L I T I E S</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="moveable-items">
+
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-3-items-1">
+													<div class="item-object experience-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin">IEEE CS</div>
+															</div>
+															<div class="content-field-wrapper  relative">
+																<div class="text-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true"><a href="#experienceLetterURL" id="qthzmm5mfv">Operating Committee Lead</a></div>
+															</div>
+															<div class="top-xty">
+																<div data-bullet-id="0" class="media top-xty no-bottom">
+																	<div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div>
+																	<div class="media-body item-0">
+																		<div class="content-field-wrapper  relative">
+																			<div class="text-field content-field-muted content-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true"><!-- <a href="" id="pv10drtnnk"><b >Events Coordinated</b> -----</a>-->
+																				<div><a href="" id="j4qw0dxmsa"><b></b><b>Responsibilities:</b> Coordinating all the commitees & Event Management</a></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div id="ProjectSection-0" class="resume-section ProjectSection">
+
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Experience" sandbox="allow-same-origin">P R O J E C T S</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="moveable-items">
+
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-3-items-1">
+													<div class="item-object experience-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-position resume-first-color resume-heading-font" placeholder="Title" sandbox="allow-same-origin">Virtual Mouse</div>
+															</div>
+															<div class="content-field-wrapper  relative">
+																<div class="text-field item-description" placeholder="Company Description" sandbox="allow-same-origin" data-decoratable="true"><a href="#experienceLetterURL" id="qthzmm5mfv"><b>Cursor Control using hand gesture</b></a></div>
+															</div>
+															<div class="top-xty">
+																<div data-bullet-id="0" class="media top-xty no-bottom">
+																	<div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div>
+																	<div class="media-body item-0">
+																		<div class="content-field-wrapper  relative">
+																			<div class="text-field content-field-muted content-field-sm item-bullet" placeholder="What did you achieve in this role?" sandbox="allow-same-origin" data-decoratable="true"><a href="" id="pv10drtnnk">Model-based hand tracking system that uses a single camera to monitor the 3D position of a hand, Enabling user to control cursor using hand gestures.</a>
+																				<div><a href="" id="j4qw0dxmsa"><b></b></a></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div id="AchievementSection-0" class="resume-section AchievementSection">
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Achievements" sandbox="allow-same-origin">A W A R D S</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-5-items-0">
+													<div class="item-object achievement-item">
+														<div class="inner">
+															<div class="achievement-item-content">
+																<div class="resume-item-icon achievement-item-icon resume-second-color editable">
+																	<div class=" icon-with-circle" data-id=""><i data-icon-name="88-certificate-01" class="icon resume-second-color icon-88-certificate-01"></i></div>
+																</div>
+																<div class="full-width">
+																	<div class="content-field-wrapper relative"><a>
+																			<div class="text-field full-width-field achievement-item-title resume-first-color resume-heading-font" placeholder="What are you most proud of?" sandbox="allow-same-origin">Winner at Mind benders Hackthon | Oct 2022</div>
+																	</div>
+																	<div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i>
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field content-field-xs" placeholder="URL" sandbox="allow-same-origin"><a href="https://drive.google.com/file/d/14vG2oPlyyTrccbP6ku6vHRrgJI8hWuvS/view?usp=sharing">Certificate</a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="padded-item-content"></div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div id="SocialSection-0" class="resume-section SocialSection">
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Find me online" sandbox="allow-same-origin">F I N D M E O N L I N E</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable">
+												<div id="sections-6-items-0">
+													<div class="item-object social-item">
+														<div class="inner">
+															<div class="social-item-container editable container-min-height">
+																<div class="resume-item-icon social-item-icon">
+																	<div class=" icon-with-circle" data-id=""><i data-icon-name="26-linkedin" class="icon resume-second-color icon-26-linkedin"></i></div>
+																</div>
+																<div class="social-item-content ">
+																	<div class="full-width">
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field social-item-title resume-first-color resume-heading-font" placeholder="Social Network" sandbox="allow-same-origin">LinkedIn</div>
+																		</div>
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field social-item-link" placeholder="Username" sandbox="allow-same-origin"><a href="https://www.linkedin.com/in/priyanshu-mishra1/">priyanshu</a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="resume-item-holder line-item editable">
+												<div id="sections-6-items-1">
+													<div class="item-object social-item">
+														<div class="inner">
+															<div class="social-item-container editable container-min-height">
+																<div class="resume-item-icon social-item-icon">
+																	<div class=" icon-with-circle" data-id=""><i data-icon-name="github-square" class="icon resume-second-color icon-github-square"></i></div>
+																</div>
+																<div class="social-item-content ">
+																	<div class="full-width">
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field social-item-title resume-first-color resume-heading-font" placeholder="Social Network" sandbox="allow-same-origin">GitHub</div>
+																		</div>
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field social-item-link" placeholder="Username" sandbox="allow-same-origin"><a href="https://github.com/elpriyanshu">elpriyanshu</a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-6-items-2">
+													<div class="item-object social-item">
+														<div class="inner">
+															<div class="social-item-container editable container-min-height">
+																<div class="resume-item-icon social-item-icon">
+																	<div class=" icon-with-circle" data-id=""><i data-icon-name="flickr" class="icon resume-second-color icon-flickr"></i></div>
+																</div>
+																<div class="social-item-content ">
+																	<div class="full-width">
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field social-item-title resume-first-color resume-heading-font" placeholder="Social Network" sandbox="allow-same-origin">Updated Resume</div>
+																		</div>
+																		<div class="content-field-wrapper relative">
+																			<div class="text-field full-width-field social-item-link" placeholder="Username" sandbox="allow-same-origin"><a href="https://elpriyanshu.github.io/">elpriyanshu.github.io</a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<!-- Page 1 Left Side end-->
+
+								<!-- Page 1 Right Side Start-->
+								<div class="resume-renderer-two-column">
+
+									<div id="TechnologySection-0" class="resume-section TechnologySection">
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Skills" sandbox="allow-same-origin">T E C H N O L O G I E S</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable">
+												<div id="sections-1-items-0">
+													<div class="item-object technologies-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-title resume-heading-font resume-second-color" placeholder="Group Title" sandbox="allow-same-origin">Front End</div>
+															</div>
+															<div class="tags">
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-0" placeholder="Tool / Technology" sandbox="allow-same-origin">HTML5</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-1" placeholder="Tool / Technology" sandbox="allow-same-origin">CSS</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-2" placeholder="Tool / Technology" sandbox="allow-same-origin">JavaScript</div>
+																</div>
+																<!-- <div class="content-field-wrapper content-field-wrapper-inline relative"><div  class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin" >AngularJS</div></div> -->
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-4" placeholder="Tool / Technology" sandbox="allow-same-origin">Bootstrap 4</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-5" placeholder="Tool / Technology" sandbox="allow-same-origin">Swagger UI</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-5" placeholder="Tool / Technology" sandbox="allow-same-origin">Thymeleaf</div>
+																</div>
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="resume-item-holder line-item editable">
+												<div id="sections-1-items-1">
+													<div class="item-object technologies-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-title resume-heading-font resume-second-color" placeholder="Group Title" sandbox="allow-same-origin">Back End</div>
+															</div>
+															<div class="tags">
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-0" placeholder="Tool / Technology" sandbox="allow-same-origin">Java SE</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-0" placeholder="Tool / Technology" sandbox="allow-same-origin">Jakarta EE</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin">Spring Boot</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin">JPA</div>
+																</div>
+
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin">RestAPI</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin">Microservices</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-1" placeholder="Tool / Technology" sandbox="allow-same-origin">Data Structures</div>
+																</div>
+
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-1" placeholder="Tool / Technology" sandbox="allow-same-origin">Python</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-2" placeholder="Tool / Technology" sandbox="allow-same-origin">SQL</div>
+																</div>
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-1-items-2">
+													<div class="item-object technologies-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-title resume-heading-font resume-second-color" placeholder="Group Title" sandbox="allow-same-origin">Dev, Operations &amp; Tools</div>
+															</div>
+															<div class="tags">
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-0" placeholder="Tool / Technology" sandbox="allow-same-origin">SCM: Git</div>
+																</div>
+
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-3" placeholder="Tool / Technology" sandbox="allow-same-origin">Maven</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-4" placeholder="Tool / Technology" sandbox="allow-same-origin">Docker</div>
+																</div>
+																<div class="content-field-wrapper content-field-wrapper-inline relative">
+																	<div class="text-field tag resume-first-color surrounding-border tag-5" placeholder="Tool / Technology" sandbox="allow-same-origin">Liquibase</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div id="CertificationsSection-0" class="resume-section CertificationsSection">
+
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Certifications" sandbox="allow-same-origin">C E R T I F I C A T I O N S</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-2-items-0">
+													<div class="item-object activity-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-title resume-first-color resume-heading-font" placeholder="Project Name" sandbox="allow-same-origin">AWS Cloud Practitioner </div>
+															</div>
+															<div class="with-icon-container top-xty">
+																<div class="text-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin">Amazon Web Services (AWS)</div>
+																<div class="top-xty">
+																	<div data-bullet-id="0" class="media top-xty no-bottom">
+																		<div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div>
+																		<div class="media-body item-0">
+																			<div class="content-field-wrapper  relative">
+																				<div class="text-field content-field-muted content-field-sm item-bullet" placeholder="What was a successful outcome of your work? (e.g. Raised $3,000 for the charity)" sandbox="allow-same-origin" data-decoratable="true">Acquired knowledge of core AWS services, infrastructure, cloud computing, security concepts and billing & pricing models</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i>
+																	<div class="content-field-wrapper relative">
+																		<div class="text-field full-width-field content-field-xs" placeholder="URL" sandbox="allow-same-origin"><a href="link">Certificate</a></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div style="clear: both;"></div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+									<div id="CoursesSection-0" class="resume-section CoursesSection">
+
+										<div class="resume-section-container editable">
+											<div>
+												<div class="resume-section-text-container">
+													<div class="content-field-wrapper relative">
+														<div class="text-field full-width-field resume-section-text resume-heading-font" placeholder="Courses" sandbox="allow-same-origin">C O U R S E S</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="moveable-items">
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-2-items-0">
+													<div class="item-object activity-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-title resume-first-color resume-heading-font" placeholder="Project Name" sandbox="allow-same-origin">HTML, CSS, and Javascript for Web Development </div>
+															</div>
+															<div class="with-icon-container top-xty">
+																<div class="text-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin">Johns Hopkins University | Coursera</div>
+																<div class="top-xty">
+																	<div data-bullet-id="0" class="media top-xty no-bottom">
+																		<div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div>
+																		<div class="media-body item-0">
+																			<div class="content-field-wrapper  relative">
+																				<div class="text-field content-field-muted content-field-sm item-bullet" placeholder="What was a successful outcome of your work? (e.g. Raised $3,000 for the charity)" sandbox="allow-same-origin" data-decoratable="true">Acquired proficiency in modern web page implementation, responsive design, and building functional web applications using HTML, CSS & JS</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i>
+																	<div class="content-field-wrapper relative">
+																		<div class="text-field full-width-field content-field-xs" placeholder="URL" sandbox="allow-same-origin"><a href="https://www.coursera.org/account/accomplishments/verify/KC2647NDPPYN">Certificate</a></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div style="clear: both;"></div>
+												</div>
+											</div>
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-2-items-0">
+													<div class="item-object activity-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-title resume-first-color resume-heading-font" placeholder="Project Name" sandbox="allow-same-origin">Data Structures </div>
+															</div>
+															<div class="with-icon-container top-xty">
+																<div class="text-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin">UC San Diego | Coursera</div>
+																<div class="top-xty">
+																	<div data-bullet-id="0" class="media top-xty no-bottom">
+																		<div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div>
+																		<div class="media-body item-0">
+																			<div class="content-field-wrapper  relative">
+																				<div class="text-field content-field-muted content-field-sm item-bullet" placeholder="What was a successful outcome of your work? (e.g. Raised $3,000 for the charity)" sandbox="allow-same-origin" data-decoratable="true">Obtained knowledge and practical experience in implementing data structures for computational problem-solving along with understanding the internal workings and typical use cases of pre-existing implementations.</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i>
+																	<div class="content-field-wrapper relative">
+																		<div class="text-field full-width-field content-field-xs" placeholder="URL" sandbox="allow-same-origin"><a href="https://www.coursera.org/account/accomplishments/verify/QFMUJNBZBTRY">Certificate</a></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div style="clear: both;"></div>
+												</div>
+											</div>
+											<div class="resume-item-holder line-item editable hide-separating-border">
+												<div id="sections-2-items-0">
+													<div class="item-object activity-item">
+														<div class="inner">
+															<div class="content-field-wrapper relative">
+																<div class="text-field full-width-field item-title resume-first-color resume-heading-font" placeholder="Project Name" sandbox="allow-same-origin">Python </div>
+															</div>
+															<div class="with-icon-container top-xty">
+																<div class="text-field item-workplace resume-second-color resume-heading-font" placeholder="Company Name" sandbox="allow-same-origin">Michigan University | Coursera</div>
+																<div class="top-xty">
+																	<div data-bullet-id="0" class="media top-xty no-bottom">
+																		<div class="media-left media-left-xs"><i class="icon icon-dot-1 bullet-dot"></i></div>
+																		<div class="media-body item-0">
+																			<div class="content-field-wrapper  relative">
+																				<div class="text-field content-field-muted content-field-sm item-bullet" placeholder="What was a successful outcome of your work? (e.g. Raised $3,000 for the charity)" sandbox="allow-same-origin" data-decoratable="true">Acquired knowledge of Python's data structures and practical experience in using them for complex data analysis.</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="item-stretch  item-url with-icon url-link"><i class="icon icon-17-link"></i>
+																	<div class="content-field-wrapper relative">
+																		<div class="text-field full-width-field content-field-xs" placeholder="URL" sandbox="allow-same-origin"><a href="https://www.coursera.org/account/accomplishments/verify/VA9PUAXTW9UE">Certificate</a></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div style="clear: both;"></div>
+												</div>
+											</div>
+										</div>
+
+
+
+									</div>
+
+								</div>
+								<!-- Page 1 Right Side End-->
+								<div style="clear: both;"></div>
+							</div>
+							<!-- Page 1 body End-->
+						</div>
+					</div>
+				</div>
+				<!-- First page ends -->
+
+				<!-- last page keep this for always in last for margin-->
+				<div style="position: relative; margin-top: 40px;" class="no-print">&nbsp;</div>
+
+			</div>
 		</div>
 	</div>
 </body>
+
 </html>

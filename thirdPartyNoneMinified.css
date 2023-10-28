@@ -12960,7 +12960,7 @@ to {
 .resume-layout-default.resume-layout-small .resume-header {
     padding-bottom: 5px!important;
 }
-.resume-layout-default.resume-layout-small .summary-item .editable-field {
+.resume-layout-default.resume-layout-small .summary-item .content-field {
     font-size: 14px!important;
 }
 .resume-layout-default.resume-layout-small .resume-item-holder .item-object>.inner {
@@ -12969,7 +12969,7 @@ to {
 .resume-layout-default.resume-layout-small .resume-section {
     padding-bottom: 0!important;
 }
-.resume-layout-default.resume-layout-small .achievement-item .achievement-item-description, .resume-layout-default.resume-layout-small .day-of-my-life-item .day-of-my-life-labels .day-of-my-life-title, .resume-layout-default.resume-layout-small .editable-field-sm {
+.resume-layout-default.resume-layout-small .achievement-item .achievement-item-description, .resume-layout-default.resume-layout-small .day-of-my-life-item .day-of-my-life-labels .day-of-my-life-title, .resume-layout-default.resume-layout-small .content-field-sm {
     font-size: 12px!important;
 }
 .resume-layout-default.resume-layout-small .achievement-item .achievement-item-title, .resume-layout-default.resume-layout-small .language-item .language-item-name {
@@ -13028,7 +13028,7 @@ to {
 .resume-layout-newcondensed.resume-layout-small .resume-section {
     padding-bottom: 0!important;
 }
-.resume-layout-newcondensed.resume-layout-small .achievement-item .achievement-item-description, .resume-layout-newcondensed.resume-layout-small .day-of-my-life-item .day-of-my-life-labels .day-of-my-life-title, .resume-layout-newcondensed.resume-layout-small .editable-field-sm, .resume-layout-newcondensed.resume-layout-small .summary-item .editable-field {
+.resume-layout-newcondensed.resume-layout-small .achievement-item .achievement-item-description, .resume-layout-newcondensed.resume-layout-small .day-of-my-life-item .day-of-my-life-labels .day-of-my-life-title, .resume-layout-newcondensed.resume-layout-small .content-field-sm, .resume-layout-newcondensed.resume-layout-small .summary-item .content-field {
     font-size: 12px;
 }
 .resume-layout-newcondensed.resume-layout-small .quote-item-quote {
@@ -13081,7 +13081,7 @@ to {
 .resume-layout-condensed.resume-layout-small .resume-section {
     padding-bottom: 0!important;
 }
-.resume-layout-condensed.resume-layout-small .achievement-item .achievement-item-description, .resume-layout-condensed.resume-layout-small .day-of-my-life-item .day-of-my-life-labels .day-of-my-life-title, .resume-layout-condensed.resume-layout-small .editable-field-sm {
+.resume-layout-condensed.resume-layout-small .achievement-item .achievement-item-description, .resume-layout-condensed.resume-layout-small .day-of-my-life-item .day-of-my-life-labels .day-of-my-life-title, .resume-layout-condensed.resume-layout-small .content-field-sm {
     font-size: 12px!important;
 }
 .resume-layout-condensed.resume-layout-small .resume-section .resume-section-container {
@@ -13330,7 +13330,7 @@ to {
 .resume-renderer-page .resume-page-wrapper {
     position: relative;
 }
-.resume-renderer-page .resume-page-wrapper .editable-field-wrapper a {
+.resume-renderer-page .resume-page-wrapper .content-field-wrapper a {
     color: inherit!important;
 }
 .resume-page-title {
@@ -13478,28 +13478,28 @@ to {
 #resume-null.is-placeholder .resume-section .slider-component-dot {
     background-color: transparent!important;
 }
-#resume-null.is-placeholder .resume-section .bullet-dot, #resume-null.is-placeholder .resume-section .editable-field, #resume-null.is-placeholder .resume-section .editable-field::-webkit-input-placeholder, #resume-null.is-placeholder .resume-section .education-item-gpa .separator, #resume-null.is-placeholder .resume-section .resume-item-icon i, #resume-null.is-placeholder .resume-section .with-icon i, #resume-null.is-placeholder .resume-section .with-icon span {
+#resume-null.is-placeholder .resume-section .bullet-dot, #resume-null.is-placeholder .resume-section .content-field, #resume-null.is-placeholder .resume-section .content-field::-webkit-input-placeholder, #resume-null.is-placeholder .resume-section .education-item-gpa .separator, #resume-null.is-placeholder .resume-section .resume-item-icon i, #resume-null.is-placeholder .resume-section .with-icon i, #resume-null.is-placeholder .resume-section .with-icon span {
     color: transparent!important;
 }
-#resume-null.is-placeholder .resume-section .bullet-dot, #resume-null.is-placeholder .resume-section .editable-field, #resume-null.is-placeholder .resume-section .editable-field::-moz-placeholder, #resume-null.is-placeholder .resume-section .education-item-gpa .separator, #resume-null.is-placeholder .resume-section .resume-item-icon i, #resume-null.is-placeholder .resume-section .with-icon i, #resume-null.is-placeholder .resume-section .with-icon span {
+#resume-null.is-placeholder .resume-section .bullet-dot, #resume-null.is-placeholder .resume-section .content-field, #resume-null.is-placeholder .resume-section .content-field::-moz-placeholder, #resume-null.is-placeholder .resume-section .education-item-gpa .separator, #resume-null.is-placeholder .resume-section .resume-item-icon i, #resume-null.is-placeholder .resume-section .with-icon i, #resume-null.is-placeholder .resume-section .with-icon span {
     color: transparent!important;
 }
-#resume-null.is-placeholder .resume-section .bullet-dot, #resume-null.is-placeholder .resume-section .editable-field, #resume-null.is-placeholder .resume-section .editable-field::-ms-input-placeholder, #resume-null.is-placeholder .resume-section .education-item-gpa .separator, #resume-null.is-placeholder .resume-section .resume-item-icon i, #resume-null.is-placeholder .resume-section .with-icon i, #resume-null.is-placeholder .resume-section .with-icon span {
+#resume-null.is-placeholder .resume-section .bullet-dot, #resume-null.is-placeholder .resume-section .content-field, #resume-null.is-placeholder .resume-section .content-field::-ms-input-placeholder, #resume-null.is-placeholder .resume-section .education-item-gpa .separator, #resume-null.is-placeholder .resume-section .resume-item-icon i, #resume-null.is-placeholder .resume-section .with-icon i, #resume-null.is-placeholder .resume-section .with-icon span {
     color: transparent!important;
 }
-#resume-null.is-placeholder .resume-section .bullet-dot, #resume-null.is-placeholder .resume-section .editable-field, #resume-null.is-placeholder .resume-section .editable-field::placeholder, #resume-null.is-placeholder .resume-section .education-item-gpa .separator, #resume-null.is-placeholder .resume-section .resume-item-icon i, #resume-null.is-placeholder .resume-section .with-icon i, #resume-null.is-placeholder .resume-section .with-icon span {
+#resume-null.is-placeholder .resume-section .bullet-dot, #resume-null.is-placeholder .resume-section .content-field, #resume-null.is-placeholder .resume-section .content-field::placeholder, #resume-null.is-placeholder .resume-section .education-item-gpa .separator, #resume-null.is-placeholder .resume-section .resume-item-icon i, #resume-null.is-placeholder .resume-section .with-icon i, #resume-null.is-placeholder .resume-section .with-icon span {
     color: transparent!important;
 }
-#resume-null.is-placeholder .resume-header .editable-field.name::-webkit-input-placeholder, #resume-null.is-placeholder .resume-header .editable-field.title::-webkit-input-placeholder {
+#resume-null.is-placeholder .resume-header .content-field.name::-webkit-input-placeholder, #resume-null.is-placeholder .resume-header .content-field.title::-webkit-input-placeholder {
     opacity: .2!important;
 }
-#resume-null.is-placeholder .resume-header .editable-field.name::-moz-placeholder, #resume-null.is-placeholder .resume-header .editable-field.title::-moz-placeholder {
+#resume-null.is-placeholder .resume-header .content-field.name::-moz-placeholder, #resume-null.is-placeholder .resume-header .content-field.title::-moz-placeholder {
     opacity: .2!important;
 }
-#resume-null.is-placeholder .resume-header .editable-field.name::-ms-input-placeholder, #resume-null.is-placeholder .resume-header .editable-field.title::-ms-input-placeholder {
+#resume-null.is-placeholder .resume-header .content-field.name::-ms-input-placeholder, #resume-null.is-placeholder .resume-header .content-field.title::-ms-input-placeholder {
     opacity: .2!important;
 }
-#resume-null.is-placeholder .resume-header .editable-field.name::placeholder, #resume-null.is-placeholder .resume-header .editable-field.title::placeholder {
+#resume-null.is-placeholder .resume-header .content-field.name::placeholder, #resume-null.is-placeholder .resume-header .content-field.title::placeholder {
     opacity: .2!important;
 }
 #resume-null.is-placeholder .photo-container .photo {
@@ -13508,7 +13508,7 @@ to {
 #resume-null.is-placeholder .resume-header-items {
     pointer-events: none;
 }
-#resume-null.is-placeholder .resume-header-items .editable-field, #resume-null.is-placeholder .resume-header-items i {
+#resume-null.is-placeholder .resume-header-items .content-field, #resume-null.is-placeholder .resume-header-items i {
     color: transparent!important;
 }
 #resume-null.is-placeholder .resume-section {
@@ -13517,10 +13517,10 @@ to {
 #resume-null.is-placeholder .resume-section .resume-section-text {
     border-color: #f3f3f3!important;
 }
-#resume-null.is-placeholder .resume-section .editable-field, #resume-null.is-placeholder .resume-section .resume-item-icon, #resume-null.is-placeholder .resume-section .with-icon-container i {
+#resume-null.is-placeholder .resume-section .content-field, #resume-null.is-placeholder .resume-section .resume-item-icon, #resume-null.is-placeholder .resume-section .with-icon-container i {
     position: relative;
 }
-#resume-null.is-placeholder .resume-section .editable-field:after, #resume-null.is-placeholder .resume-section .resume-item-icon:after, #resume-null.is-placeholder .resume-section .with-icon-container i:after {
+#resume-null.is-placeholder .resume-section .content-field:after, #resume-null.is-placeholder .resume-section .resume-item-icon:after, #resume-null.is-placeholder .resume-section .with-icon-container i:after {
     position: absolute;
     content: "";
     width: 100%;
@@ -13529,31 +13529,31 @@ to {
     left: 0;
     background-color: #f3f3f3;
 }
-#resume-null.is-placeholder .item-object .editable-field:after {
+#resume-null.is-placeholder .item-object .content-field:after {
     height: 13px;
 }
 #resume-null.is-placeholder .resume-renderer-two-column:first-child .resume-section-text:after {
     height: 22px;
     width: 175px;
 }
-#resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .editable-field-wrapper:first-child .editable-field:after {
+#resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .content-field-wrapper:first-child .content-field:after {
     width: 32%}
-#resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .editable-field-wrapper:nth-child(2) .editable-field:after {
+#resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .content-field-wrapper:nth-child(2) .content-field:after {
     width: 29%}
-#resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .media .media-body .editable-field:after {
+#resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .media .media-body .content-field:after {
     width: 79%}
 #resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .with-icon-container i {
     width: 63px;
 }
-#resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .editable-field-xs:after {
+#resume-null.is-placeholder .resume-renderer-two-column:first-child .inner .content-field-xs:after {
     display: none;
 }
 #resume-null.is-placeholder .resume-renderer-two-column:nth-child(2) .resume-section-text:after {
     height: 22px;
     width: 75%}
-#resume-null.is-placeholder .resume-renderer-two-column:nth-child(2) .inner>div:first-child .editable-field:after {
+#resume-null.is-placeholder .resume-renderer-two-column:nth-child(2) .inner>div:first-child .content-field:after {
     width: 85%}
-#resume-null.is-placeholder .resume-renderer-two-column:nth-child(2) .inner>div:nth-child(2) .editable-field:after {
+#resume-null.is-placeholder .resume-renderer-two-column:nth-child(2) .inner>div:nth-child(2) .content-field:after {
     width: 70%}
 #resume-null.is-placeholder .resume-renderer-two-column:nth-child(2) .resume-item-icon:after {
     top: 2px;
@@ -13574,7 +13574,7 @@ to {
 .resume-layout-condensed .resume-item-holder:after, .resume-layout-newcondensed .resume-item-holder:after {
     display: none!important;
 }
-.editable-field {
+.content-field {
     padding: 0;
     border: 0;
     resize: none;
@@ -13598,23 +13598,23 @@ to {
     word-break: break-word;
     letter-spacing: normal;
 }
-.editable-field:focus {
+.content-field:focus {
     outline: none;
 }
-.editable-field-wrapper {
+.content-field-wrapper {
     position: relative;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
-.editable-field-wrapper-inline {
+.content-field-wrapper-inline {
     display: inline-block;
 }
-.editable-field-highlights-inline {
+.content-field-highlights-inline {
     padding: 3px 0;
 }
-.editable-field-highlights {
+.content-field-highlights {
     position: absolute!important;
     color: transparent!important;
     margin: 0!important;
@@ -13624,7 +13624,7 @@ to {
     bottom: 0;
     z-index: 0;
 }
-.editable-field-highlights mark {
+.content-field-highlights mark {
     -webkit-border-radius: 2px;
     border-radius: 2px;
     background-color: #ffd7dc;
@@ -13633,64 +13633,64 @@ to {
     margin-left: -2px;
     margin-right: -2px;
 }
-input.editable-field {
+input.content-field {
     overflow-x: initial!important;
 }
-a.editable-field {
+a.content-field {
     word-wrap: break-word;
     word-break: break-all;
 }
-.editable-field input {
+.content-field input {
     outline: none;
     border: none;
     background-color: transparent;
 }
-.date-range-label, .editable-field::-webkit-input-placeholder, .editable-field input::-webkit-input-placeholder, [contenteditable][placeholder]:empty:before {
+.date-range-label, .content-field::-webkit-input-placeholder, .content-field input::-webkit-input-placeholder, [contenteditable][placeholder]:empty:before {
     opacity: .5!important;
 }
-.date-range-label, .editable-field::-moz-placeholder, .editable-field input::-moz-placeholder, [contenteditable][placeholder]:empty:before {
+.date-range-label, .content-field::-moz-placeholder, .content-field input::-moz-placeholder, [contenteditable][placeholder]:empty:before {
     opacity: .5!important;
 }
-.date-range-label, .editable-field::-ms-input-placeholder, .editable-field input::-ms-input-placeholder, [contenteditable][placeholder]:empty:before {
+.date-range-label, .content-field::-ms-input-placeholder, .content-field input::-ms-input-placeholder, [contenteditable][placeholder]:empty:before {
     opacity: .5!important;
 }
-.date-range-label, .editable-field::placeholder, .editable-field input::placeholder, [contenteditable][placeholder]:empty:before {
+.date-range-label, .content-field::placeholder, .content-field input::placeholder, [contenteditable][placeholder]:empty:before {
     opacity: .5!important;
 }
-.editable-field:focus::-webkit-input-placeholder, .editable-field input:focus::-webkit-input-placeholder, [contenteditable][placeholder]:empty:focus:before {
+.content-field:focus::-webkit-input-placeholder, .content-field input:focus::-webkit-input-placeholder, [contenteditable][placeholder]:empty:focus:before {
     opacity: .2!important;
 }
-.editable-field:focus::-moz-placeholder, .editable-field input:focus::-moz-placeholder, [contenteditable][placeholder]:empty:focus:before {
+.content-field:focus::-moz-placeholder, .content-field input:focus::-moz-placeholder, [contenteditable][placeholder]:empty:focus:before {
     opacity: .2!important;
 }
-.editable-field:focus::-ms-input-placeholder, .editable-field input:focus::-ms-input-placeholder, [contenteditable][placeholder]:empty:focus:before {
+.content-field:focus::-ms-input-placeholder, .content-field input:focus::-ms-input-placeholder, [contenteditable][placeholder]:empty:focus:before {
     opacity: .2!important;
 }
-.editable-field:focus::placeholder, .editable-field input:focus::placeholder, [contenteditable][placeholder]:empty:focus:before {
+.content-field:focus::placeholder, .content-field input:focus::placeholder, [contenteditable][placeholder]:empty:focus:before {
     opacity: .2!important;
 }
-.resume-section-text-container .editable-field::-webkit-input-placeholder, .resume-section-text-container .editable-field input::-webkit-input-placeholder {
+.resume-section-text-container .content-field::-webkit-input-placeholder, .resume-section-text-container .content-field input::-webkit-input-placeholder {
     opacity: 1!important;
 }
-.resume-section-text-container .editable-field::-moz-placeholder, .resume-section-text-container .editable-field input::-moz-placeholder {
+.resume-section-text-container .content-field::-moz-placeholder, .resume-section-text-container .content-field input::-moz-placeholder {
     opacity: 1!important;
 }
-.resume-section-text-container .editable-field::-ms-input-placeholder, .resume-section-text-container .editable-field input::-ms-input-placeholder {
+.resume-section-text-container .content-field::-ms-input-placeholder, .resume-section-text-container .content-field input::-ms-input-placeholder {
     opacity: 1!important;
 }
-.resume-section-text-container .editable-field::placeholder, .resume-section-text-container .editable-field input::placeholder {
+.resume-section-text-container .content-field::placeholder, .resume-section-text-container .content-field input::placeholder {
     opacity: 1!important;
 }
 .empty-date span {
     opacity: .5!important;
 }
-.editable-field-xs {
+.content-field-xs {
     font-size: 11px;
 }
-.editable-field-sm {
+.content-field-sm {
     font-size: 13px;
 }
-.editable-field-muted {
+.content-field-muted {
     color: #384347;
 }
 .item-object .with-icon-container .with-icon.btn-link.btn-resume-data {
@@ -13707,7 +13707,7 @@ a.editable-field {
     -webkit-font-smoothing: initial;
     -moz-osx-font-smoothing: initial;
 }
-.resume-layout-condensed .editable-field {
+.resume-layout-condensed .content-field {
     line-height: 1.35;
 }
 .resume-layout-condensed .item-object .with-icon-container .with-icon .icon {
@@ -13716,28 +13716,28 @@ a.editable-field {
     -webkit-transform: translateY(2px);
     transform: translateY(2px);
 }
-.resume-layout-condensed .item-object .with-icon-container .with-icon .editable-field {
+.resume-layout-condensed .item-object .with-icon-container .with-icon .content-field {
     line-height: normal;
 }
-.resume-layout-condensed .with-icon.btn-link.btn-resume-data, .resume-layout-condensed .with-icon .editable-field {
+.resume-layout-condensed .with-icon.btn-link.btn-resume-data, .resume-layout-condensed .with-icon .content-field {
     color: #65696d;
 }
-.resume-layout-condensed .with-icon .editable-field input {
+.resume-layout-condensed .with-icon .content-field input {
     min-width: 100%}
-.resume-layout-newcondensed .editable-field {
+.resume-layout-newcondensed .content-field {
     line-height: 1.35;
     color: #384347;
 }
-.resume-layout-newcondensed .editable-field-sm {
+.resume-layout-newcondensed .content-field-sm {
     font-size: 12px;
 }
-.resume-layout-newcondensed .item-object .with-icon-container .with-icon .editable-field {
+.resume-layout-newcondensed .item-object .with-icon-container .with-icon .content-field {
     line-height: normal;
 }
-.resume-layout-newcondensed .with-icon.btn-link.btn-resume-data, .resume-layout-newcondensed .with-icon .editable-field {
+.resume-layout-newcondensed .with-icon.btn-link.btn-resume-data, .resume-layout-newcondensed .with-icon .content-field {
     color: #65696d;
 }
-.resume-layout-newcondensed .with-icon .editable-field input {
+.resume-layout-newcondensed .with-icon .content-field input {
     min-width: 100%}
 .resume-layout-newcondensed .item-url {
     margin-top: 8px;
@@ -13746,20 +13746,20 @@ a.editable-field {
 .resume-layout-newcondensed .item-url .icon {
     margin-right: 6px;
 }
-.resume-layout-newcondensed .item-url .editable-field {
+.resume-layout-newcondensed .item-url .content-field {
     color: #b9b9b9;
     font-size: 12px;
 }
-.resume-layout-newcondensed .date-range-label, .resume-layout-newcondensed .editable-field::-webkit-input-placeholder, .resume-layout-newcondensed .editable-field input::-webkit-input-placeholder {
+.resume-layout-newcondensed .date-range-label, .resume-layout-newcondensed .content-field::-webkit-input-placeholder, .resume-layout-newcondensed .content-field input::-webkit-input-placeholder {
     color: #65696d!important;
 }
-.resume-layout-newcondensed .date-range-label, .resume-layout-newcondensed .editable-field::-moz-placeholder, .resume-layout-newcondensed .editable-field input::-moz-placeholder {
+.resume-layout-newcondensed .date-range-label, .resume-layout-newcondensed .content-field::-moz-placeholder, .resume-layout-newcondensed .content-field input::-moz-placeholder {
     color: #65696d!important;
 }
-.resume-layout-newcondensed .date-range-label, .resume-layout-newcondensed .editable-field::-ms-input-placeholder, .resume-layout-newcondensed .editable-field input::-ms-input-placeholder {
+.resume-layout-newcondensed .date-range-label, .resume-layout-newcondensed .content-field::-ms-input-placeholder, .resume-layout-newcondensed .content-field input::-ms-input-placeholder {
     color: #65696d!important;
 }
-.resume-layout-newcondensed .date-range-label, .resume-layout-newcondensed .editable-field::placeholder, .resume-layout-newcondensed .editable-field input::placeholder {
+.resume-layout-newcondensed .date-range-label, .resume-layout-newcondensed .content-field::placeholder, .resume-layout-newcondensed .content-field input::placeholder {
     color: #65696d!important;
 }
 .with-icon-container {
@@ -13813,7 +13813,7 @@ a.editable-field {
     flex: 0 0 auto;
     height: 14px;
 }
-.with-icon .editable-field {
+.with-icon .content-field {
     padding-left: 2px;
 }
 .with-icon a {
@@ -13905,7 +13905,7 @@ a.editable-field {
     line-height: 25px;
     font-weight: 700!important;
 }
-.resume-header .with-icon .editable-field {
+.resume-header .with-icon .content-field {
     font-size: 12px;
     font-weight: 700;
     line-height: 16px;
@@ -13982,7 +13982,7 @@ a.editable-field {
     color: #555!important;
     height: 14px;
 }
-.resume-layout-condensed .resume-header .with-icon-container .with-icon .editable-field {
+.resume-layout-condensed .resume-header .with-icon-container .with-icon .content-field {
     font-size: 12px;
     color: #65696d;
     font-weight: 400;
@@ -14025,7 +14025,7 @@ a.editable-field {
     margin-right: 3px;
     margin-left: 5px;
 }
-.resume-layout-newcondensed .resume-header .with-icon-container .with-icon .editable-field {
+.resume-layout-newcondensed .resume-header .with-icon-container .with-icon .content-field {
     font-size: 13px;
     color: #384347;
     font-weight: 400!important;
@@ -14035,7 +14035,7 @@ a.editable-field {
     font-size: 18px;
     font-style: italic;
 }
-.quote-item .editable-field-wrapper {
+.quote-item .content-field-wrapper {
     width: 100%}
 .quote-item .quote-item-author {
     color: #384347;
@@ -15164,7 +15164,7 @@ a.editable-field {
     position: relative;
     top: 5px;
 }
-.education-item .mobile-gpa-content .editable-field-wrapper {
+.education-item .mobile-gpa-content .content-field-wrapper {
     margin-top: 0!important;
 }
 .education-item .education-item-gpa, .education-item .education-item-not-gpa {
@@ -15185,7 +15185,7 @@ a.editable-field {
     border-left: 1px solid #65696d;
     font-size: 15px;
 }
-.education-item .education-item-gpa .editable-field {
+.education-item .education-item-gpa .content-field {
     display: inline-block;
     width: 35px;
     height: 20px!important;
@@ -15231,12 +15231,12 @@ a.editable-field {
     display: inline-block;
     vertical-align: middle;
 }
-.education-item .education-item-gpa-container-small .editable-field {
+.education-item .education-item-gpa-container-small .content-field {
     display: inline-block;
     vertical-align: middle;
     width: auto;
 }
-.education-item .education-item-gpa-container-small .editable-field input {
+.education-item .education-item-gpa-container-small .content-field input {
     background-color: transparent;
 }
 .resume-layout-condensed .education-item .with-icon-container .with-icon {
@@ -15255,7 +15255,7 @@ a.editable-field {
     border-left-color: #f1f1f1;
     padding-left: 12px;
 }
-.resume-layout-newcondensed .education-item .education-item-gpa .editable-field {
+.resume-layout-newcondensed .education-item .education-item-gpa .content-field {
     text-align: unset;
 }
 .resume-layout-newcondensed .education-item .education-item-gpa .gpa-text-wrapper {
@@ -15272,7 +15272,7 @@ a.editable-field {
     vertical-align: middle;
     margin: 0 6px;
 }
-.resume-layout-newcondensed .education-item .education-item-gpa-container-left .editable-field {
+.resume-layout-newcondensed .education-item .education-item-gpa-container-left .content-field {
     display: inline-block;
     vertical-align: middle;
     width: auto;
@@ -15283,7 +15283,7 @@ a.editable-field {
 .resume-layout-condensed .experience-item .item-position {
     font-weight: 400;
 }
-.resume-layout-condensed .experience-item .with-icon-container .editable-field-wrapper {
+.resume-layout-condensed .experience-item .with-icon-container .content-field-wrapper {
     -webkit-box-flex: 0;
     -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
@@ -15347,7 +15347,7 @@ a .item-object.social-item {
 .social-item .empty-field {
     min-height: 18px;
 }
-.social-item .container-min-height, .social-item .title-hidden .editable-field-wrapper {
+.social-item .container-min-height, .social-item .title-hidden .content-field-wrapper {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -15401,14 +15401,14 @@ a .item-object.social-item {
 .resume-layout-condensed .social-item .social-item-link {
     color: #65696d;
 }
-.summary-item .editable-field {
+.summary-item .content-field {
     color: #384347;
     font-size: 14px !important;
 }
-.resume-layout-condensed .summary-item .editable-field {
+.resume-layout-condensed .summary-item .content-field {
     font-size: 13px;
 }
-.cover-letter .summary-item .editable-field {
+.cover-letter .summary-item .content-field {
     text-align: justify;
     white-space: inherit!important;
 }
@@ -21816,7 +21816,7 @@ to {
 .mobile-section.BookSection .resume-item-holder {
     width: 100%!important;
 }
-.mobile-section .editable-field-wrapper {
+.mobile-section .content-field-wrapper {
     margin-top: 8px;
     margin-bottom: 8px;
 }
